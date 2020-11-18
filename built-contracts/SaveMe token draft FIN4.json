@@ -1,0 +1,57 @@
+{
+    "id": "Hclgr",
+    "created": 1603241852876,
+    "lastModified": 1603243363495,
+    "basics": {
+        "name": "SaveMe",
+        "symbol": "SVM",
+        "description": "Basic token for \"Individual' Health||A token for health awarded to people/users/patients that take individual actions to ensure personal health"
+    },
+    "properties": {
+        "isTransferable": true,
+        "isBurnable": true,
+        "isCapped": false,
+        "cap": 0,
+        "decimals": 0,
+        "initialSupply": 2400,
+        "initialSupplyOwner": "0xeF8085b7638e8C8A1C44E9c57Ff2c6c9d58fD9a8"
+    },
+    "actions": {
+        "text": "In the case of diabetes patients, they should ensure that on average every hour their glucose levels measured, must be within a normal range\n\nFor mobile addiction patients the screen usage data reported must be below 3 hours per day"
+    },
+    "minting": {
+        "isMintable": true,
+        "Fin4ClaimingHasMinterRole": true,
+        "MintingSourcererHasMinterRole": true,
+        "additionalMinterRoles": "",
+        "fixedAmount": 1,
+        "unit": "quantity"
+    },
+    "noninteractiveVerifiers": {
+        "AllowOnlyThese": {
+            "parameters": {
+                "permitted users": null,
+                "permitted groups": null
+            }
+        }
+    },
+    "interactiveVerifiers": {},
+    "sourcererPairs": [
+        {
+            "id": "lwt",
+            "sourcererName": "BurnSourcerer",
+            "parameters": {
+                "collateral": null,
+                "exchangeRatio": 1
+            }
+        }
+    ],
+    "externalUnderlyings": [
+        "Health Insurance Discount",
+        "Wearable Glucose Monitoring System Patch"
+    ],
+    "sourcererSettings": {
+        "allowAdditionAfterCreation": false,
+        "allowCollateralUsageForOthers": true
+    }
+}
