@@ -168,7 +168,7 @@ void rejectClaim() {
   http.addHeader("Content-Type", "application/json");
 
   // Actually send the request
-  int httpCode = http.POST("");//String("{\"isAccepted\": true, \"accessToken\": \"") + accessToken + String("\"}"));
+  int httpCode = http.POST("");//String("{\"isAccepted\": false, \"accessToken\": \"") + accessToken + String("\"}"));
 
   // Get the response payload
   String payload = http.getString();
