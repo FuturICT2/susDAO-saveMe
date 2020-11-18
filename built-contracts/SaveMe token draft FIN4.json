@@ -17,7 +17,7 @@
         "initialSupplyOwner": "0xeF8085b7638e8C8A1C44E9c57Ff2c6c9d58fD9a8"
     },
     "actions": {
-        "text": "In the case of diabetes patients, they should ensure that on average every hour their glucose levels measured, must be within a normal range\n\nFor mobile addiction patients the screen usage data reported must be below 3 hours per day"
+        "text": "Diabetes patients  should ensure that on average every 30 mins their glucose levels measured, must be within a normal range"
     },
     "minting": {
         "isMintable": true,
