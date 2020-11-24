@@ -15,11 +15,18 @@ boolean token = false;
 //Network parameters
 const char* ssid = "3Blue1Brown"; //SSID of your Wi-Fi router
 const char* pass = "Poseidonos201!";
-char accessToken[] = "";
+char accessToken[] = "SaveMe";
 
 //Address
-char pingAddress[] = "http://fin4oracleengine.ngrok.io/sensor"; // sensor ping end point
-char verificationAddress[] = "http://fin4oracleengine.ngrok.io/sensor"; // Claim verification end point
+char pingAddress[] = "http://5ddf2840331d.ngrok.io/"; // sensor ping end point
+char verificationAddress[] = "http://5ddf2840331d.ngrok.io/token"; // Claim verification end point with /token
+char dataAddress[] =  "http://5ddf2840331d.ngrok.io/sensor_data"; // Claim verification end point with/sensor_data
+byte MAC[6] ; 
+
+String id;
+String tik = "\""; //Create useful String to replace this " symbol
+int skip= 0 ; //start with an indicator/flag of whether the website is online
+
 
 void setup() {  
   //Setup Serial
@@ -48,6 +55,7 @@ void setup() {
     delay(500);
     lcd.print('.');
     Serial.print(".");
+    
   }
   Serial.println("");
   lcd.clear();
@@ -61,10 +69,22 @@ void setup() {
   lcd.print("Public IP");
   lcd.setCursor(0,1);
   lcd.print(WiFi.localIP());
+
   
-   //Setup LED
+  //Setup LED
   pinMode(RED_PIN, OUTPUT); // we set the green led pin as an output pin
+
+  //Setup id of device(user) using the MAC Address
+  WiFi.macAddress(MAC);
+  id = String(MAC[5],HEX)+":"+String(MAC[4],HEX)+":"+String(MAC[3],HEX)+":"+String(MAC[2],HEX)+":"+String(MAC[1],HEX)+":"+String(MAC[0],HEX);
+  
+  //Check if website is online
+  ping();
+
 }
+
+
+
 
 void loop() {
 int average = 0 ;
@@ -84,6 +104,7 @@ for( int i=0 ; i<6 ; i++){
  lcd.print("-----SaveMe-----");
  lcd.setCursor(0,1);
  lcd.print("Last:"+ String(measurement)+"           ");
+ send_measurement(String(measurement));
  average = average+measurement;
 }
 lcd.clear();
@@ -103,13 +124,13 @@ if (token)
 {
     lcd.print("Token Awarded"); 
     Serial.println("Token Awarded");
-    verifyClaim();
+    verifyClaim(String(average));
 }
 else 
 {
     lcd.print("No Token Awarded"); 
     Serial.println("No Token Awarded");
-    rejectClaim();
+    rejectClaim(String(average));
 }
 
   }
@@ -117,44 +138,79 @@ else
 
 // Ping Server
 void ping() {
+
+  while (skip == 0){
   
-  // Declare object of class HTTPClient
-  HTTPClient http;
+    // Declare object of class HTTPClient
+    HTTPClient http;
 
-  // Specify Ping destination
-  http.begin(pingAddress + String("?id=PlantWateringSensor&data=ThePlantSaysThanksForWatering"));
+    // Specify Ping destination
+    http.begin(pingAddress);
 
-  // Specify Content type and authenticate as Oracle
-  http.addHeader("Content-Type", "application/json");
+    // Specify Content type and authenticate as Oracle
+    http.addHeader("Content-Type", "application/json");
 
-  // Send Request and receive http Code
-  int httpCode = http.POST(""); //String("{\"accessToken\": \"") + accessToken + String("\"}"));
+    // Send Request and receive http Code
+    int httpCode = http.POST(String("{\"accessToken\": \"") + "SaveMe"+ String("\"}"));
+
+    
+    // Logging
+    if (httpCode == 200) {
+      Serial.println("\n Ping! ------ \n");
+      Serial.println(httpCode.getString());
+      skip = 1;
+    } else {
+      Serial.print(httpCode) ;
+      Serial.println("\n Server not available \n");
+    }
+    
+    // Close connection
+    http.end();
+  }
+}
+
+void send_measurement(String data) {
+
+  //Declare object of HTTPClient class
+  HTTPClient http2;
+
+  http2.begin(dataAddress); 
+
+  // Specify content-type header and "log in" as Oracle
+  http2.addHeader("Content-Type", "application/json");
+
+  String json_post = String("{\"id\":\"")+ id + String("\",\"data\": " ) +tik + data+ String("\" }"); // to use " you create a string that has /" inside it
+  //always use String() because in C++ all string are initialized as char []
+  // Actually send the request
+  int httpCode = http2.POST(json_post);
+
+  // Get the response payload
+  String payload = http2.getString();
 
   // Logging
-  if (httpCode == 200) {
-    Serial.println("\n Ping! ------ \n");
-  } else {
-    Serial.println("\n server not available \n");
-  }
-  
-  // Close connection
-  http.end();
+  Serial.print("httpCode = ");
+  Serial.println(httpCode);
+  Serial.print("payload is = ");
+  Serial.println(payload);
+
 }
 
 // Send Verification of Claim to Server and award token
-void verifyClaim() {
+void verifyClaim(String value) {
 
+  
+  String post_string = String("{\"id\":\"")+ id + String("\",\"average\": " ) + tik + value + tik + String(", \"token\": \"Yes\" }"); // to use " you create a string that has /" inside it );
   // Declare object of class HTTPClient
   HTTPClient http;
 
   // Specify request destination
-  http.begin(verificationAddress + String("?id=PlantWateringSensor&data=ThePlantSaysThanksForWatering"));
+  http.begin(verificationAddress);
 
   // Specify content-type header and "log in" as Oracle
   http.addHeader("Content-Type", "application/json");
 
   // Actually send the request
-  int httpCode = http.POST("");//String("{\"isAccepted\": true, \"accessToken\": \"") + accessToken + String("\"}"));
+  int httpCode = http.POST(post_string);
 
   // Get the response payload
   String payload = http.getString();
@@ -172,26 +228,30 @@ void verifyClaim() {
 
 
 // Send Claim rejection to the server and remove 2 tokens
-void rejectClaim() {
+void rejectClaim(String value) {
 
   // Declare object of class HTTPClient
   HTTPClient http;
+  tik = String("\"");
+  String post_string = String("{\"id\":\"")+ id + String("\",\"average\": " ) + tik + value + tik+String(", \"token\": \"No\" }"); // to use " you create a string that has \" inside it );
 
   // Specify request destination
-  http.begin(verificationAddress + String("?id=PlantWateringSensor&data=ThePlantSaysThanksForWatering"));
+  http.begin(verificationAddress);
 
   // Specify content-type header and "log in" as Oracle
   http.addHeader("Content-Type", "application/json");
 
+
+
   // Actually send the request
-  int httpCode = http.POST("");//String("{\"isAccepted\": true, \"accessToken\": \"") + accessToken + String("\"}"));
+  int httpCode = http.POST(post_string); //JSON format
 
   // Get the response payload
-  String payload = http.getString();
+  String payload = http.getString(); //get the payload of the response from the server
 
   // Logging
   Serial.print("httpCode = ");
-  Serial.println(httpCode);
+  Serial.println(httpCode); // we POST our data and then the server rturns a response that is then printed out
   Serial.print("payload is = ");
   Serial.println(payload);
 
