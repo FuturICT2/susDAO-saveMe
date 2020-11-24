@@ -1,2 +1,3 @@
-FIN4Contracts/mycontracts/MainContract.sol
-FIN4Sensors/main/main.ino
+FIN4Contracts/
+FIN4Sensors/
+FIN4OracleEngine/
