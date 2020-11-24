@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SaveMe - A token for Health</title>
+    <style>
+        *,
+        html {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: rgb(0,253, 160);
+            }
+
+        .center {
+            width: 100%;
+            height: 50%;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 144px;
+            color: black;
+            text-shadow: white 0px 0px 0px;
+        }
+
+        p {
+            font-size: 64px;
+            color: black;
+            text-shadow: white 0px 0px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h1>Hello Again!</h1>
+        <script> 
+            console.log('I am about to fetch a rainbow');
+            const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
+            async function getData(){
+                const response = await fetch('http://5a75e9bfca11.ngrok.io/sensor_data', options);//, options); //options could include many things
+                const data = await response.json() ;
+                console.log(data);
+                document.getElementByid('measurement').textContent = data ;  //data.toFixed(2)//set it only to 2 decimal places 
+            }
+            /*fetch('/sensor_data')
+            .then(function(response) {
+                return response.json()
+            })
+            .then(function(data){
+                console.log('the data', data)
+            })  */
+            //getData(); //get first data once we loaded it
+            //setInterval(getData, 1000)  //receive requests every 1 second
+        </script>
+        <p>This is the sensor page</p>
+        <p>The last measurement was <h5 id="measurement"> --- </h5>  </p>
+    </div>
+</body>
+
+</html>
