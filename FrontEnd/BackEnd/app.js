@@ -51,6 +51,9 @@ app.post('/sensor_data', (request, response) => {
   
 });
 
+//Add the app_get for this page
+//app.get 
+
 app.post('/token', (request, response) => {
     const postBody = request.body;
     console.log(postBody);
