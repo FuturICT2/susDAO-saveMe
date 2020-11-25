@@ -1,5 +1,13 @@
 {
   "dependencies": {
-    "cors": "^2.8.5"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "g": "^2.0.1",
+    "http-server": "^0.12.3",
+    "install": "^0.13.0",
+    "moment": "^2.29.1",
+    "ngrok": "^3.3.0",
+    "solc": "^0.7.5"
   }
 }

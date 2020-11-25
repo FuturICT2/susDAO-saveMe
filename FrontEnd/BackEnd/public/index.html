@@ -56,13 +56,14 @@
     <div class="center">
         <h1>Hello Again!</h1>
         <script> 
-            console.log('I am about to fetch a rainbow');
+            console.log('I am about to fetch the post data from the sensor');
             const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
+
             async function getData(){
-                const response = await fetch('http://5a75e9bfca11.ngrok.io/sensor_data', options);//, options); //options could include many things
+                const response = await fetch('http://5079587339c1.ngrok.io/sensor_data', options);//, options); //options could include many things
                 const data = await response.json() ;
-                console.log(data);
-                document.getElementByid('measurement').textContent = data ;  //data.toFixed(2)//set it only to 2 decimal places 
+                console.log(data.data); //print last measurement
+                document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
             }
             /*fetch('/sensor_data')
             .then(function(response) {
@@ -71,11 +72,11 @@
             .then(function(data){
                 console.log('the data', data)
             })  */
-            //getData(); //get first data once we loaded it
-            //setInterval(getData, 1000)  //receive requests every 1 second
+            getData(); //get first data once we loaded it
+            setInterval(getData, 100);  //receive requests every 1 second
         </script>
         <p>This is the sensor page</p>
-        <p>The last measurement was <h5 id="measurement"> --- </h5>  </p>
+        <p>The last measurement was <h1 id="measurement"> --- </h1>  </p>
     </div>
 </body>
 
