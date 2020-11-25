@@ -1,10 +1,10 @@
-pragma solidity ^0.5.17;
+pragma solidity ^0.7.5;
 
 contract SaveMeMain {
 
     address public MainContractCreator;
     constructor() public {
-        MainContractCreater = msg.sender;
+        MainContractCreator = msg.sender;
     }
 
     address public SaveMeUncappedTokenCreatorAddress;
@@ -17,17 +17,17 @@ contract SaveMeMain {
     address public SaveMeSystemParametersAddress;
     address public SaveMeUnderlyingsAddress;
     address public SaveMeVotingAddress;
-    address public SaveMeFin4OracleHubAddress; TODO
+    address public SaveMeFin4OracleHubAddress; 
 
     function setSatelliteAddresses(address uncappedTokenCreator, address cappedTokenCreator, address tokenManagement, address claiming,
-    address collections, address messaging, address verifying, address groups, address systemParameters, address underlyings, address fin4voting) public {
+    address collections, address verifying, address groups, address systemParameters, address underlyings, address fin4voting) public {
         require (msg.sender == MainContractCreator, "Only the creator of MainContract can set satellite addresses");
         SaveMeUncappedTokenCreatorAddress = uncappedTokenCreator;
         SaveMeCappedTokenCreatorAddress = cappedTokenCreator;
         SaveMeTokenManagementAddress = tokenManagement;
         SaveMeClaimingAddress = claiming;
         SaveMeCollectionsAddress = collections;
-        SaveMeMessagingAddress = messaging;
+        //SaveMeMessagingAddress = messaging;
         SaveMeVerifyingAddress = verifying;
         SaveMeGroupsAddress = groups;
         SaveMeSystemParametersAddress = systemParameters;
@@ -36,9 +36,9 @@ contract SaveMeMain {
     }
 
     function getSatelliteAddresses() public view returns(address, address, address, address, address, address, address, address,
-        address, address, address) {
+        address, address) {
         return (SaveMeUncappedTokenCreatorAddress, SaveMeCappedTokenCreatorAddress, SaveMeTokenManagementAddress, SaveMeClaimingAddress,
-            SaveMeCollectionsAddress, SaveMeMessagingAddress, SaveMeVerifyingAddress, SaveMeGroupsAddress, SaveMeSystemParametersAddress,
+            SaveMeCollectionsAddress,  SaveMeVerifyingAddress, SaveMeGroupsAddress, SaveMeSystemParametersAddress,
             SaveMeUnderlyingsAddress, SaveMeVotingAddress);
     }
 
