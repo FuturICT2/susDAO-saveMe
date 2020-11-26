@@ -12,9 +12,15 @@ const app = express();
 
 //define variables
 const database = new Datastore({filename:'data_database.db', timestampData : false}); //timestamp the data as well
-database.loadDatabase(); //it load the database.Or it makes one if the databas does not exceed
-database.insert({_id : "__counter__" , counter: -1});
+const token_database= new Datastore({filename:"token_database.db", timestampData : false}); //only add the server id => "_id"
 
+
+
+/* Load database / Create one if file specified is not found  */
+database.loadDatabase(); 
+token_database.loadDatabase();
+let counter = null;
+database.count({}, function (err, counted) {set_the_counter(counted);}); //Get # of entries in database
 
 
  /* Start Application */
@@ -25,10 +31,6 @@ app.use(express.json({limit: '1mb'})) ;//allows to receive json posts and set a 
  
 
 
-
- //get latest counter number
-let counter = null;
-database.count({}, function (err, counted) {set_the_counter(counted);});
 
 /* Application routes */
 
@@ -46,99 +48,132 @@ database.count({}, function (err, counted) {set_the_counter(counted);});
   res.sendStatus(500)
   // === res.status(500).send('Internal Server Error')    */
 
-app.get('/', (request, response) =>  {
+
+
+app.get('/', (request, response) =>  { //handle get requests to the server
   app.set('view engine', 'html'); 
-  response.status(200).sendFile(`${__dirname}/public/index.html`);
+  response.status(200).sendFile(`/../FrontEnd/public/index.html`);
 });
 
 
 
 
-app.post('/', (request,response) => {
+app.post('/', (request,response) => { //handle post requests to the server
   console.log(request.body);
   response.send("200");
-  //response.end();
 });   
 
 app.post('/sensor_data', (request, response) => {
   const postBody = request.body;
   postBody["date"] = (new Date()).getTime();//postBody["counter"] = counter; //add the counter field
   database.insert(postBody) ; 
-  console.log("Received" , postBody);
+  console.log("Server received sensor measurements" , postBody); //print the POST data received
   //if (id_verified) // if id is verified then return a success maeesage
   response.write("Measurement received");
   
 });
 
 
-
-
-
-//Add the app_get for the nsor_data route , to get and display all the data
-app.get('/sensor_data' , (request, response)=> { 
-  //assume the request return the data we stored using the php script
-  //Quering data from the dataset and get the last inserted value
+app.get('/sensor_data' , (request, response)=> { //Quering data from the dataset and get the last inserted value
   database.find({}, (err, data) => {
     maxDate = get_the_max_date_number(data);
     database.find({date: maxDate} , (err,matched_objects) => {
       if (err) {
         response.statusCode = 404;
         response.json(err);
-      };
-      response.json(matched_objects[0]);
-      console.log("Latest Measurement retrieved is", matched_objects[0].data)
-    //console.log ("The last measurement was" , got_latest_post_data);
+	  };
+	  delete matched_objects[0]['id'] //send JSON object without sensor id
+	  delete matched_objects[0]['_id']; //send JSON object without server id
+	  response.json(matched_objects[0]);
+      console.log("Latest Measurement retrieved is", matched_objects[0])
+	  //consider sening as a response only the data as JSON and not the ID
     });
   });
 
 });
 
 app.post('/token', (request, response) => {
-    const postBody = request.body;
-    console.log(postBody);
-    //if (id_verified) // if id is verified then return a success maeesage
+	const postBody = request.body; //POSTed data from sensor
+	postBody["date"] = (new Date()).getTime();//postBody["counter"] = counter; //add the counter field
+  token_database.insert(postBody); 
+    console.log("Server received token average" , postBody);
+	//if (id_verified) // if id is verified then return a success maeesage
+	//Check List with verified IDs
     response.write("Token verified");
     
   });
 
+  app.get('/token', (request, response) => {
+	//For now just read the POST data, but this will be displayed by reading from the blockchain
+	token_database.find({id: "58:17:14:a4:ae:30"} , (err,same_id_objects) => { //get the id for each user
+			maxDate = get_the_max_date_number(same_id_objects); //out of the entries with the same id
+			token_database.find({date: maxDate} , (err,matched_objects) => {
+			  if (err) {
+				response.statusCode = 404;
+				response.json(err);
+			  };
+			  delete matched_objects['id']; //send JSON object without sensor id
+			  delete matched_objects['_id']; //send JSON object without server id
+			  response.json(matched_objects[0]);
+			  console.log("Latest token average was", matched_objects[0].average)
+			  //consider sening as a response only the data as JSON and not the ID
+			});
+		  });
+    
+  });
 
 
-  /* All functions used */
+  app.get('/token_quantity', (request, response) => {
+	//For now just read the POST data, but this will be displayed by reading from the blockchain
+	token_database.find({id: "58:17:14:a4:ae:30"} , (err,matched_objects) => { //get the id for each user
+		if (err) {
+		  response.statusCode = 404;
+		  response.json(err);
+		};
+		//json_text = '{ \"quantity\":'+String(matched_objects.length)+"} " ; //counts tokens corresponding to user with this id
+    //TokenQuantity_object = JSON.parse(json_text);
+    let token_quantity = matched_objects.length ;
+		response.json({quantity: token_quantity , pao : "ole ole"});
+		console.log("Total tokens:", token_quantity);
+    });
+  });
 
 
 
-  function get_the_max_date_number(data){
-    var array = [];
-    for (i=0 ; i<data.length ; i++){
-      index_date = data[i].date;
-      array[i] = index_date;
+
+
+
+
+
+
+    /* All functions used */
+    function get_the_max_date_number(data){
+      var array = [];
+      for (i=0 ; i<data.length ; i++){
+        index_date = data[i].date;
+        array[i] = index_date;
+      }
+      array.sort(function(a, b){return b - a}); //descending order
+      console.log("The most recent date is", array[0]); //get max date value
+      return array[0];
     }
-    array.sort(function(a, b){return b - a}); //descending order
-    console.log("The most recent date is", array[0]); //get max date value
-    return array[0];
-  }
-
-
-  function set_the_counter(result){
-    console.log(result);
-    counter = result ; 
-  }
-
-
   
-
-
-  function get_latest_object(database){
-    latest = database[0]//get last object in JSON array 
-    console.log(latest.data);
-    return latest ;
-  }
-
-
-  //might not need this function yet
-  function get_last_measurement(){
-    last = object["data"];//get last measurement from object 
-    //console.log(last);
-    return last ;
-  }
- 
+  
+    function set_the_counter(result){
+      console.log(result);
+      counter = result ; 
+    }
+  
+  
+    function get_latest_object(database){
+      latest = database[0]//get last object in JSON array 
+      console.log(latest.data);
+      return latest ;
+    }
+  
+    //might not need this function yet
+    function get_last_measurement(){
+      last = object["data"];//get last measurement from object 
+      //console.log(last);
+      return last ;
+    }
