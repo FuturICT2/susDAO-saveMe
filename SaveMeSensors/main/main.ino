@@ -9,7 +9,6 @@ const int RED_PIN = 34; // number of the pin changing the Dflop state
 int SENSOR_PIN = A0;   //don't really need it
 
 //Compute variables
-float average = 0 ;
 boolean token = false;
 
 //Network parameters
@@ -87,7 +86,7 @@ void setup() {
 
 
 void loop() {
-int average = 0 ;
+float average = 0 ;
 //Find average after 5 testings
 for( int i=0 ; i<6 ; i++){
  delay(6000);
@@ -124,13 +123,13 @@ if (token)
 {
     lcd.print("Token Awarded"); 
     Serial.println("Token Awarded");
-    verifyClaim(String(average));
+    verifyClaim(String(total_average));
 }
 else 
 {
     lcd.print("No Token Awarded"); 
     Serial.println("No Token Awarded");
-    rejectClaim(String(average));
+    rejectClaim(String(total_average));
 }
 
   }
