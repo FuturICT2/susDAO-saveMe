@@ -42,7 +42,98 @@
             }
 
 
+            .wave {
+            animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+            animation-duration: 2.5s;        /* Change to speed up or slow down */
+            animation-iteration-count: infinite;  /* Never stop waving :) */
+            transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+            display: inline-block;
+            }
 
+            @keyframes wave-animation {
+            0% { transform: rotate( 0.0deg) }
+            10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+            20% { transform: rotate(-8.0deg) }
+            30% { transform: rotate(14.0deg) }
+            40% { transform: rotate(-4.0deg) }
+            50% { transform: rotate(10.0deg) }
+            60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+            100% { transform: rotate( 0.0deg) }
+            }
+
+
+
+
+            @keyframes rotation {
+        0% {
+            transform: rotate3d(0, 1, 0, 0deg);
+        }
+        50% {
+            transform: rotate3d(0, 1, 0, 180deg);
+        }
+        100% {
+            transform: rotate3d(0, 1, 0, 360deg);
+        }
+        }
+        .container {
+        background-color: transparent;
+        width: 100px;
+        height: 100px;
+        perspective: 1000;
+        margin: 1em auto;
+        }
+        .coin {
+        position: center;
+        top: 25px;
+        left: 25px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 50px;
+        animation-name: rotation;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: 2.5s;
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+        border-radius: 50%; 
+        border-color :rgb(0, 255, 34);
+        border-width:2px;
+        }
+        .face {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        backface-visibility: hidden;
+        background-image: url('assets/circle-cropped.png');
+        background-repeat: no-repeat;
+        background-size: 130% 130%;
+        background-color: black;
+        background-position: center;
+        }
+        .heads {
+        z-index: 2;
+        transform: rotateY(0deg);
+        background-image: url('assets/circle-cropped.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: black;
+        background-position: center;
+        }
+        .tails {
+        background-image: url('assets/circle-cropped.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: black;
+        background-position: center;
+        z-index: 1;
+        transform: rotateY(180deg);
+        }
+
+  
 
         .center {
             width: 100%;
@@ -157,95 +248,108 @@
     
 
     </style>
+
+
 </head>
 
 <body>
+
     <div class="center">
         <h1 style="display:inline;">
-            <span style="margin-left:10%;"> 
-    
+            <span style="margin-right:10%;"> 
+                
             </span>
 
-            <span style="margin-left:0%;"></span>
+            <span style="margin-left:00%;"></span>
                 Welcome back Sweatheart!
             </span> 
-            <span style="margin-right:0%;"></span>
-                <img src="assets/hey.png">
+            <span  style="margin-right:5%;"></span>
+                <h1 class="wave">👋</h1>
             </span> 
-            <span style="margin-left:10%;"></span>
+            <span style="margin-left:0%;"></span>
                
             </span> 
         </h1>
-        <script> 
+  
+  <script>
 
-            var button_measurements = document.getElementById("measurement-button");//get the elements form the htlm file
-            var button_send = document.getElementById("send-message"); //get the send button from the html file
-
-            function send_token(){
-                location.href = "http://ca50bdc46536.ngrok.io/send_token_page"; //get the measurements page
-            }
             
-                
+        var button_measurements = document.getElementById("measurement-button");//get the elements form the htlm file
+        var button_send = document.getElementById("send-message"); //get the send button from the html file
+
+        function send_token(){
+            location.href = "http://ca50bdc46536.ngrok.io/send_token_page"; //get the measurements page
+        }
+
             
-            function measurement_page() {
-                location.href = "http://ca50bdc46536.ngrok.io/measurement_page"; //get the send token page
-            }
+
+        function measurement_page() {
+            location.href = "http://ca50bdc46536.ngrok.io/measurement_page"; //get the send token page
+        }
 
 
-            console.log('I am about to fetch the post data from the sensor');
-            const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
+        console.log('I am about to fetch the post data from the sensor');
+        const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
 
-            async function getSensorData(){
-                const response = await fetch('http://ca50bdc46536.ngrok.io/sensor_data', options);//, options); //options could include many things
-                const data = await response.json() ;
-                console.log(data.data); //print last measurement
-                document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
-            }
-
-
-            async function getToken(){
-                const response = await fetch('http://ca50bdc46536.ngrok.io/token', options);//, options); //options could include many things
-                const data = await response.json() ;
-                console.log(data.average); //print last measurement / equivalent to data["average"]
-                document.getElementById('average').textContent = data["average"];//toFixed(2)//set it only to 2 decimal places if is it an integer
-            }
+        async function getSensorData(){
+            const response = await fetch('http://ca50bdc46536.ngrok.io/sensor_data', options);//, options); //options could include many things
+            const data = await response.json() ;
+            console.log(data.data); //print last measurement
+            document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
+        }
 
 
-            async function getTokenQuantity(){
-                const response = await fetch('http://ca50bdc46536.ngrok.io/token_quantity', options);//, options); //options could include many things
-                const data = await response.json() ;
-                console.log(data.quantity); //print last measurement
-                document.getElementById('quantity').textContent = data["quantity"];
-                //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
-            }
-            /*fetch('/sensor_data')
-            .then(function(response) {
-                return response.json()
-            })
-            .then(function(data){
-                console.log('the data', data)
-            })  */
-            getSensorData(); //get first data once we loaded it
-            getToken();
-            getTokenQuantity();
-            setInterval(getSensorData, 3000);  //receive requests every 1 second
-            setInterval(getToken, 3000);  //receive requests every 1 second
-            setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
-        </script>
+        async function getTokenQuantity(){
+            const response = await fetch('http://ca50bdc46536.ngrok.io/token_quantity', options);//, options); //options could include many things
+            const data = await response.json() ;
+            console.log(data.quantity); //print last measurement
+            document.getElementById('quantity').textContent = data["quantity"];
+            //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
+        }
+        /*fetch('/sensor_data')
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(data){
+            console.log('the data', data)
+        })  */
+        getSensorData(); //get first data once we loaded it
+        getTokenQuantity();
+        setInterval(getSensorData, 3000);  //receive requests every 1 second
+        setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
+
+
+    </script>
         
-        <p></p>
+        <p><br></p>
+
+        <p><br></p>  
+
 
         <p1>SaveMe </p1>
 
         <p></p>
-        <img src="assets/circle-cropped.png" alt="Avatar"> <p></p>
+        <div class="container">
+        <div class="coin">
+            <div class="face heads">
+             
+            </div>
+            <div class="face tails">
+              
+            </div>
+        </div>
+        </div>
+        
         <p2>Total token count is:</p2> 
 
         <p> </p>
 
         <h4 id="quantity"> --- </h4>
 
-        <p> </p>
+        <p> <br></p>
+
+        
+
     
         <h6 style="display:inline;">
             <span style="margin-left:0%;"> 
@@ -257,8 +361,16 @@
             </span> 
         </h6>
  
-        
+    
     </div>
+
+   
 </body>
+
+
+
+<div class="container">
+    
+  </div>
 
 </html>
