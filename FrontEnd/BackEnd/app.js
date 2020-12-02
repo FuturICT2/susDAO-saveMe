@@ -1,6 +1,8 @@
 
 /* Required packages - Libraries*/
 const express = require('express');
+var path = require('path');
+var cors = require('cors');
 //const bodyParser = require('body-parser');
 const { response } = require('express');
 const Datastore =  require('nedb'); //for database
@@ -24,10 +26,10 @@ database.count({}, function (err, counted) {set_the_counter(counted);}); //Get #
 
 
  /* Start Application */
-
 app.listen(8000, () => console.info('Application running on port 8000'));
 app.use(express.static ('public')) //you should give a directory file
 app.use(express.json({limit: '1mb'})) ;//allows to receive json posts and set a limit of how big JSON files you can receive as POST
+app.use(cors());
  
 
 
@@ -55,6 +57,19 @@ app.get('/', (request, response) =>  { //handle get requests to the server
   response.status(200).sendFile(`/../FrontEnd/public/index.html`);
 });
 
+
+app.get('/measurement_page', (request,response) => {
+  
+  response.sendFile(path.resolve(__dirname+`/public/measurements.html`)) //try to avoid relative paths, they say it is the hackers first try
+
+});
+
+
+app.get('/send_token_page', (request,response) => {
+    
+    response.sendFile(path.resolve(__dirname+`/public/send.html`)) //try to avoid relative paths, they say it is the hackers first try
+
+});
 
 
 
@@ -102,6 +117,9 @@ app.post('/token', (request, response) => {
     response.write("Token verified");
     
   });
+
+
+
 
   app.get('/token', (request, response) => {
 	//For now just read the POST data, but this will be displayed by reading from the blockchain
