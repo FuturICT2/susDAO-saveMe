@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/custom.css" rel='stylehsheet'>
+    <meta name="apple-mobile-web-app-title" content="SaveMe">
+    <meta name="application-name" content="SaveMe">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>SaveMe - A token for Health</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SaveMe - A token for Health</title>
+    <style>
+        *,
+        html {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: rgb(0,253, 160);
+            }
+
+        .center {
+            width: 100%;
+            height: 75%;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 144px;
+            color: black;
+            text-shadow: white 0px 0px 0px;
+        }
+
+        h4 { font-size: 64px;
+            color:rebeccapurple;
+            text-shadow: white 0px 1px 0px;
+        }
+
+
+        h2 { font-size: 64px;
+            color:rgb(3, 3, 3);
+            text-shadow: white 0px 1px 0px;
+        }
+
+
+
+        p {
+            font-size: 64px;
+            color: black;
+            text-shadow: white 0px 0px 0px;
+        }
+
+        p1 {
+            font-size: 64px;
+            color: black;
+            text-shadow: white 0px 0px 0px;
+        }
+
+        p2 {
+            font-size: 64px;
+            color: black;
+            text-shadow: white 1px 1px 0px;
+        }
+
+        p1, h2 {display:inline;}
+        p2, h4 {display:inline;}
+        p1, h1 {display:inline;}
+
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h1>Hello Again!</h1>
+        <script> 
+            console.log('I am about to fetch the post data from the sensor');
+            const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
+
+            async function getSensorData(){
+                const response = await fetch('http://ca50bdc46536.ngrok.io/sensor_data', options);//, options); //options could include many things
+                const data = await response.json() ;
+                console.log(data.data); //print last measurement
+                document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
+            }
+
+
+            async function getToken(){
+                const response = await fetch('http://ca50bdc46536.ngrok.io/token', options);//, options); //options could include many things
+                const data = await response.json() ;
+                console.log(data.average); //print last measurement / equivalent to data["average"]
+                document.getElementById('average').textContent = data["average"];//toFixed(2)//set it only to 2 decimal places if is it an integer
+            }
+
+
+            async function getTokenQuantity(){
+                const response = await fetch('http://ca50bdc46536.ngrok.io/token_quantity', options);//, options); //options could include many things
+                const data = await response.json() ;
+                console.log(data.quantity); //print last measurement
+                document.getElementById('quantity').textContent = data["quantity"];
+                //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
+            }
+            /*fetch('/sensor_data')
+            .then(function(response) {
+                return response.json()
+            })
+            .then(function(data){
+                console.log('the data', data)
+            })  */
+            getSensorData(); //get first data once we loaded it
+            getToken();
+            getTokenQuantity();
+            setInterval(getSensorData, 3000);  //receive requests every 1 second
+            setInterval(getToken, 3000);  //receive requests every 1 second
+            setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
+        </script>
+        <p>This is the sensor page</p>
+        <p>The last measurement was <h1 id="measurement"> ---</h1> <p1>mmol/L</p1> </p>
+        <p1>Last average was <h2 id="average"> --- </h2> <p1>mmol/L</p1></p1> <p></p>
+        <p2>Total token count is <h4 id="quantity"> --- </h4></p2>
+    </div>
+</body>
+
+</html>
