@@ -41,6 +41,25 @@
             background-color: rgb(0,253, 160);
             }
 
+            .wave {
+            animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+            animation-duration: 2.5s;        /* Change to speed up or slow down */
+            animation-iteration-count: infinite;  /* Never stop waving :) */
+            transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+            display: inline-block;
+            }
+
+            @keyframes wave-animation {
+            0% { transform: rotate( 0.0deg) }
+            10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+            20% { transform: rotate(-8.0deg) }
+            30% { transform: rotate(14.0deg) }
+            40% { transform: rotate(-4.0deg) }
+            50% { transform: rotate(10.0deg) }
+            60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+            100% { transform: rotate( 0.0deg)}
+            }
+
         .center {
             width: 100%;
             height: 75%;
@@ -100,7 +119,7 @@
 
 <body>
     <div class="center">
-        <h1>Hello Again!</h1>
+        <h1 >Hello Again!</h1> <h1 class="wave" >👋🏿 </h1> 
         <script> 
             console.log('I am about to fetch the post data from the sensor');
             const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
@@ -142,6 +161,7 @@
             setInterval(getToken, 3000);  //receive requests every 1 second
             setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
         </script>
+        <script src="/FrontEnd/BackEnd/measurements.js"></script>
         <p>This is the sensor page</p>
         <p>The last measurement was <h1 id="measurement"> ---</h1> <p1>mmol/L</p1> </p>
         <p1>Last average was <h2 id="average"> --- </h2> <p1>mmol/L</p1></p1> <p></p>
