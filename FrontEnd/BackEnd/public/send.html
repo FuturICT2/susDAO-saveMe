@@ -114,15 +114,21 @@
             const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
 
             async function getSensorData(){
-                const response = await fetch('http://ca50bdc46536.ngrok.io/sensor_data', options);//, options); //options could include many things
+                const response = await fetch('http://cdfb9192f529.ngrok.io/sensor_data', options);//, options); //options could include many things
                 const data = await response.json() ;
                 console.log(data.data); //print last measurement
                 document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
             }
 
 
+             function open_scanner ()
+             {  location.href = "https://webqr.com/index.html"
+                 //call the intent to open the QR code scanner
+             }
+
+
             async function getToken(){
-                const response = await fetch('http://ca50bdc46536.ngrok.io/token', options);//, options); //options could include many things
+                const response = await fetch('http://cdfb9192f529.ngrok.io/token', options);//, options); //options could include many things
                 const data = await response.json() ;
                 console.log(data.average); //print last measurement / equivalent to data["average"]
                 document.getElementById('average').textContent = data["average"];//toFixed(2)//set it only to 2 decimal places if is it an integer
@@ -130,7 +136,7 @@
 
 
             async function getTokenQuantity(){
-                const response = await fetch('http://ca50bdc46536.ngrok.io/token_quantity', options);//, options); //options could include many things
+                const response = await fetch('http://cdfb9192f529.ngrok.io/token_quantity', options);//, options); //options could include many things
                 const data = await response.json() ;
                 console.log(data.quantity); //print last measurement
                 document.getElementById('quantity').textContent = data["quantity"];
@@ -153,6 +159,8 @@
         <p>Send tokens</p>
         <p> <br> </p>
         <img src="assets/circle-cropped.png" alt="Avatar"> <p></p>
+        <p><br></p>
+        <button id= "scan-qr" type="button" onclick = "open_scanner()" style = "font-size : 24px ; width :150px ; height :100px" class="btn btn-primary btn-circle btn-xl-send" >Scan QR</button> 
         
     </div>
 </body>
