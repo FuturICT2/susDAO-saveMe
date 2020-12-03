@@ -253,7 +253,7 @@
 </head>
 
 <body>
-
+    <audio id="alert" src="warning_sound.mp3" preload="auto"></audio>
     <div class="center">
         <h1 style="display:inline;">
             <span style="margin-right:10%;"> 
@@ -278,29 +278,45 @@
         var button_send = document.getElementById("send-message"); //get the send button from the html file
 
         function send_token(){
-            location.href = "http://ca50bdc46536.ngrok.io/send_token_page"; //get the measurements page
+            location.href = "http://cdfb9192f529.ngrok.io/send_token_page"; //get the measurements page
         }
 
             
 
         function measurement_page() {
-            location.href = "http://ca50bdc46536.ngrok.io/measurement_page"; //get the send token page
+            location.href = "http://cdfb9192f529.ngrok.io/measurement_page"; //get the send token page
         }
 
 
         console.log('I am about to fetch the post data from the sensor');
         const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
+        let red = false;
+
 
         async function getSensorData(){
-            const response = await fetch('http://ca50bdc46536.ngrok.io/sensor_data', options);//, options); //options could include many things
+            const response = await fetch('http://cdfb9192f529.ngrok.io/sensor_data', options);//, options); //options could include many things
             const data = await response.json() ;
+            let last_measurement = parseFloat(data.data);
             console.log(data.data); //print last measurement
-            document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
+            //document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
+            if (last_measurement <=3.0 || last_measurement>=9.5)
+            {
+                document.getElementById("measurement-button").style.backgroundImage = "url('assets/warning2.png')";
+                //document.getElementById("alert").play(); //enable only when you have fixed the AJAX automatic requests
+                //alert("Sugar levels out of range!");
+                red = true ;   
+            }
+            else {  if(red=true){
+                document.getElementById("measurement-button").style.backgroundImage = "url('assets/tick2.png')";
+                red = false ;
+                alert_once  = false ; }
+                //otherwise do nothing
+            }
         }
 
 
         async function getTokenQuantity(){
-            const response = await fetch('http://ca50bdc46536.ngrok.io/token_quantity', options);//, options); //options could include many things
+            const response = await fetch('http://cdfb9192f529.ngrok.io/token_quantity', options);//, options); //options could include many things
             const data = await response.json() ;
             console.log(data.quantity); //print last measurement
             document.getElementById('quantity').textContent = data["quantity"];
@@ -361,7 +377,6 @@
             </span> 
         </h6>
  
-    
     </div>
 
    
