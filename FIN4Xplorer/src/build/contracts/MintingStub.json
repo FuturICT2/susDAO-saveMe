@@ -1,0 +1,349 @@
+{
+  "contractName": "MintingStub",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/MintingStub.sol\":\"MintingStub\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/MintingStub.sol\":{\"keccak256\":\"0x99958e17836620e6abc38c4a04c2767e55619d11dc96baa61a26b5f4357a0adc\",\"urls\":[\"bzz-raw://927fcb90c4b840c157382c4b75206724b9261fc4a21b27c4938981e540e22cc7\",\"dweb:/ipfs/QmdznRpQx2guGmqouopYRi7jADaXUT4yLaX11NF7ysD7F3\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.17;\n\ncontract MintingStub {\n\n    function mint(address account, uint256 amount) public returns (bool);\n\n}\n",
+  "sourcePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/MintingStub.sol",
+  "ast": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/MintingStub.sol",
+    "exportedSymbols": {
+      "MintingStub": [
+        6026
+      ]
+    },
+    "id": 6027,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6016,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6026,
+        "linearizedBaseContracts": [
+          6026
+        ],
+        "name": "MintingStub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6025,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6021,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6018,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6025,
+                  "src": "68:15:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6017,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "68:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6020,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6025,
+                  "src": "85:14:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6019,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "85:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "67:33:19"
+            },
+            "returnParameters": {
+              "id": 6024,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6023,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6025,
+                  "src": "117:4:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6022,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "117:4:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "116:6:19"
+            },
+            "scope": 6026,
+            "src": "54:69:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6027,
+        "src": "26:100:19"
+      }
+    ],
+    "src": "0:127:19"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/MintingStub.sol",
+    "exportedSymbols": {
+      "MintingStub": [
+        6026
+      ]
+    },
+    "id": 6027,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6016,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6026,
+        "linearizedBaseContracts": [
+          6026
+        ],
+        "name": "MintingStub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6025,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6021,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6018,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6025,
+                  "src": "68:15:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6017,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "68:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6020,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6025,
+                  "src": "85:14:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6019,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "85:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "67:33:19"
+            },
+            "returnParameters": {
+              "id": 6024,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6023,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6025,
+                  "src": "117:4:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6022,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "117:4:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "116:6:19"
+            },
+            "scope": 6026,
+            "src": "54:69:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6027,
+        "src": "26:100:19"
+      }
+    ],
+    "src": "0:127:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.1",
+  "updatedAt": "2020-12-03T18:31:09.751Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

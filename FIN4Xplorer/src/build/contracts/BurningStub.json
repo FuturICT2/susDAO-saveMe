@@ -1,0 +1,289 @@
+{
+  "contractName": "BurningStub",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "burnFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"burnFrom\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/BurningStub.sol\":\"BurningStub\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/BurningStub.sol\":{\"keccak256\":\"0x6b9426e6cf1b3b39cb707c92ec112f4220141269ae15cbfbce7733642ff2bf49\",\"urls\":[\"bzz-raw://4a84c8ec503e1231a154ed4a4799eddce34063cd9bc84ebe475077b4cd23793a\",\"dweb:/ipfs/QmZRdf1ZenaXKHy1KwzPhRDa3fvdVxV5U85DrcUY1aGBEC\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.17;\n\ncontract BurningStub {\n\n    function burnFrom(address from, uint256 value) public;\n\n}\n",
+  "sourcePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/BurningStub.sol",
+  "ast": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/BurningStub.sol",
+    "exportedSymbols": {
+      "BurningStub": [
+        5856
+      ]
+    },
+    "id": 5857,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5848,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:14"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5856,
+        "linearizedBaseContracts": [
+          5856
+        ],
+        "name": "BurningStub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5855,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burnFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5853,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5850,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "72:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5849,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "72:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5852,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "86:13:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5851,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "86:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "71:29:14"
+            },
+            "returnParameters": {
+              "id": 5854,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "107:0:14"
+            },
+            "scope": 5856,
+            "src": "54:54:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5857,
+        "src": "26:85:14"
+      }
+    ],
+    "src": "0:112:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/BurningStub.sol",
+    "exportedSymbols": {
+      "BurningStub": [
+        5856
+      ]
+    },
+    "id": 5857,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5848,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:14"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5856,
+        "linearizedBaseContracts": [
+          5856
+        ],
+        "name": "BurningStub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5855,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burnFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5853,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5850,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "72:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5849,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "72:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5852,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "86:13:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5851,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "86:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "71:29:14"
+            },
+            "returnParameters": {
+              "id": 5854,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "107:0:14"
+            },
+            "scope": 5856,
+            "src": "54:54:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5857,
+        "src": "26:85:14"
+      }
+    ],
+    "src": "0:112:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.1",
+  "updatedAt": "2020-12-03T18:31:09.748Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

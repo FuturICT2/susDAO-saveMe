@@ -17,9 +17,9 @@ const char* pass = "Poseidonos201!";
 char accessToken[] = "SaveMe";
 
 //Address
-char pingAddress[] = "http://5079587339c1.ngrok.io/"; // sensor ping end point
-char verificationAddress[] = "http://5079587339c1.ngrok.io/token"; // Claim verification end point with /token
-char dataAddress[] =  "http://5079587339c1.ngrok.io/sensor_data"; // Claim verification end point with/sensor_data
+char pingAddress[] = "http://cdfb9192f529.ngrok.io/"; // sensor ping end point
+char verificationAddress[] = "http://cdfb9192f529.ngrok.io/token"; // Claim verification end point with /token
+char dataAddress[] =  "http://cdfb9192f529.ngrok.io/sensor_data"; // Claim verification end point with/sensor_data
 byte MAC[6] ; 
 
 String id;

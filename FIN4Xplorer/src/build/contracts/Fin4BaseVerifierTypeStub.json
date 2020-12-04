@@ -1,0 +1,230 @@
+{
+  "contractName": "Fin4BaseVerifierTypeStub",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4BaseVerifierTypeStub.sol\":\"Fin4BaseVerifierTypeStub\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4BaseVerifierTypeStub.sol\":{\"keccak256\":\"0xd211ee5afa5469a6a27a37f3024e4eb3b18671ffe9bd7076477fcad84e53d24a\",\"urls\":[\"bzz-raw://8748e01fc252fbdea077b35582fd256b08607729f39da485109dd7f919f34bc3\",\"dweb:/ipfs/QmfGtMDaPHLwTgVMakUSscG3oN4fAqsTkc1SP7CbPgsf8T\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.17;\n\ncontract Fin4BaseVerifierTypeStub {\n\n    function getName() public view returns(string memory);\n\n}\n",
+  "sourcePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4BaseVerifierTypeStub.sol",
+  "ast": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4BaseVerifierTypeStub.sol",
+    "exportedSymbols": {
+      "Fin4BaseVerifierTypeStub": [
+        5864
+      ]
+    },
+    "id": 5865,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5858,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:15"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5864,
+        "linearizedBaseContracts": [
+          5864
+        ],
+        "name": "Fin4BaseVerifierTypeStub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5863,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getName",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5859,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "83:2:15"
+            },
+            "returnParameters": {
+              "id": 5862,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5861,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5863,
+                  "src": "106:13:15",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5860,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "106:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "105:15:15"
+            },
+            "scope": 5864,
+            "src": "67:54:15",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5865,
+        "src": "26:98:15"
+      }
+    ],
+    "src": "0:125:15"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4BaseVerifierTypeStub.sol",
+    "exportedSymbols": {
+      "Fin4BaseVerifierTypeStub": [
+        5864
+      ]
+    },
+    "id": 5865,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5858,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:15"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5864,
+        "linearizedBaseContracts": [
+          5864
+        ],
+        "name": "Fin4BaseVerifierTypeStub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5863,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getName",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5859,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "83:2:15"
+            },
+            "returnParameters": {
+              "id": 5862,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5861,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5863,
+                  "src": "106:13:15",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5860,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "106:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "105:15:15"
+            },
+            "scope": 5864,
+            "src": "67:54:15",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5865,
+        "src": "26:98:15"
+      }
+    ],
+    "src": "0:125:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.1",
+  "updatedAt": "2020-12-03T18:27:58.867Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

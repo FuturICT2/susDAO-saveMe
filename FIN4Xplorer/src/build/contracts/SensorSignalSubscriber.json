@@ -1,0 +1,344 @@
+{
+  "contractName": "SensorSignalSubscriber",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "sensorID",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "data",
+          "type": "string"
+        }
+      ],
+      "name": "sensorSignalReceived",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"sensorID\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"data\",\"type\":\"string\"}],\"name\":\"sensorSignalReceived\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/SensorSignalSubscriber.sol\":\"SensorSignalSubscriber\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/SensorSignalSubscriber.sol\":{\"keccak256\":\"0xa90822237b64881bb09bb66b704d34aebe488d50f5da1dd9605978d473e34be0\",\"urls\":[\"bzz-raw://f770a12fcbd547366214ede159788c7417723f7574f68ed36eb471f8460c5862\",\"dweb:/ipfs/QmafC7LrApKEzn2XW9hNsTn4ReUSHH1aL2SxZwyx5NXpuB\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.17;\n\ncontract SensorSignalSubscriber { // used as interface TODO naming-scheme? stub vs. interface...\n\n    function sensorSignalReceived(string memory sensorID, uint timestamp, string memory data) public;\n\n}\n",
+  "sourcePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/SensorSignalSubscriber.sol",
+  "ast": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/SensorSignalSubscriber.sol",
+    "exportedSymbols": {
+      "SensorSignalSubscriber": [
+        6038
+      ]
+    },
+    "id": 6039,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6028,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:20"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6038,
+        "linearizedBaseContracts": [
+          6038
+        ],
+        "name": "SensorSignalSubscriber",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6037,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sensorSignalReceived",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6035,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6030,
+                  "name": "sensorID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6037,
+                  "src": "158:22:20",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6029,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:6:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6032,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6037,
+                  "src": "182:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6031,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "182:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6034,
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6037,
+                  "src": "198:18:20",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6033,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "198:6:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "157:60:20"
+            },
+            "returnParameters": {
+              "id": 6036,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "224:0:20"
+            },
+            "scope": 6038,
+            "src": "128:97:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6039,
+        "src": "26:202:20"
+      }
+    ],
+    "src": "0:229:20"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/SensorSignalSubscriber.sol",
+    "exportedSymbols": {
+      "SensorSignalSubscriber": [
+        6038
+      ]
+    },
+    "id": 6039,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6028,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:20"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6038,
+        "linearizedBaseContracts": [
+          6038
+        ],
+        "name": "SensorSignalSubscriber",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6037,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sensorSignalReceived",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6035,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6030,
+                  "name": "sensorID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6037,
+                  "src": "158:22:20",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6029,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:6:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6032,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6037,
+                  "src": "182:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6031,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "182:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6034,
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6037,
+                  "src": "198:18:20",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6033,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "198:6:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "157:60:20"
+            },
+            "returnParameters": {
+              "id": 6036,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "224:0:20"
+            },
+            "scope": 6038,
+            "src": "128:97:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6039,
+        "src": "26:202:20"
+      }
+    ],
+    "src": "0:229:20"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.1",
+  "updatedAt": "2020-12-03T18:31:09.752Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

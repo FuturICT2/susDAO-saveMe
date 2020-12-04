@@ -1,0 +1,1774 @@
+{
+  "contractName": "Fin4ClaimingStub",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "claimer",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "Fin4ClaimingHasMinterRole",
+          "type": "bool"
+        }
+      ],
+      "name": "claimApprovedPingback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddrToReceiveVerifierNotice",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "verifierTypeAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "claimer",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        }
+      ],
+      "name": "verifierPendingPingback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddrToReceiveVerifierNotice",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "verifierTypeAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "claimer",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        }
+      ],
+      "name": "verifierApprovalPingback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddrToReceiveVerifierNotice",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "verifierTypeAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "claimer",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        }
+      ],
+      "name": "verifierRejectionPingback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "claimer",
+          "type": "address"
+        }
+      ],
+      "name": "claimRejectionPingback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"claimer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"Fin4ClaimingHasMinterRole\",\"type\":\"bool\"}],\"name\":\"claimApprovedPingback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimer\",\"type\":\"address\"}],\"name\":\"claimRejectionPingback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddrToReceiveVerifierNotice\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"verifierTypeAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimer\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"}],\"name\":\"verifierApprovalPingback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddrToReceiveVerifierNotice\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"verifierTypeAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimer\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"}],\"name\":\"verifierPendingPingback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddrToReceiveVerifierNotice\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"verifierTypeAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimer\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"}],\"name\":\"verifierRejectionPingback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4ClaimingStub.sol\":\"Fin4ClaimingStub\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4ClaimingStub.sol\":{\"keccak256\":\"0x2f05f5f62e710ca716afb153c28aaa5e0e4682bcf5364dc93d35377fcddb4b26\",\"urls\":[\"bzz-raw://e178e5f4a62f62372c4a7df87b33a32502f2e82c4e44bea7b310fb3c6b3bfeeb\",\"dweb:/ipfs/QmRegGG7h26jQ2HPj8YLYPvgtzgDd5MyyE2vwR8TVwvMRt\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.17;\n\ncontract Fin4ClaimingStub {\n\n    function claimApprovedPingback(address tokenAddress, address claimer, uint claimId, uint quantity, bool Fin4ClaimingHasMinterRole) public;\n\n    function verifierPendingPingback(address tokenAddrToReceiveVerifierNotice, address verifierTypeAddress,\n        uint claimId, address claimer, string memory message) public;\n\n    function verifierApprovalPingback(address tokenAddrToReceiveVerifierNotice, address verifierTypeAddress,\n        uint claimId, address claimer, string memory message) public;\n\n    function verifierRejectionPingback(address tokenAddrToReceiveVerifierNotice, address verifierTypeAddress,\n        uint claimId, address claimer, string memory message) public;\n\n    function claimRejectionPingback(address tokenAddress, uint claimId, address claimer) public;\n\n}\n",
+  "sourcePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4ClaimingStub.sol",
+  "ast": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4ClaimingStub.sol",
+    "exportedSymbols": {
+      "Fin4ClaimingStub": [
+        5928
+      ]
+    },
+    "id": 5929,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5866,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:16"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5928,
+        "linearizedBaseContracts": [
+          5928
+        ],
+        "name": "Fin4ClaimingStub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5879,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimApprovedPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5877,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5868,
+                  "name": "tokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "90:20:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5867,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "90:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5870,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "112:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5869,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "112:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5872,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "129:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5871,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "129:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5874,
+                  "name": "quantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "143:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5873,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "143:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5876,
+                  "name": "Fin4ClaimingHasMinterRole",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "158:30:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5875,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "89:100:16"
+            },
+            "returnParameters": {
+              "id": 5878,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "196:0:16"
+            },
+            "scope": 5928,
+            "src": "59:138:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5892,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifierPendingPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5890,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5881,
+                  "name": "tokenAddrToReceiveVerifierNotice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "236:40:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5880,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5883,
+                  "name": "verifierTypeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "278:27:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5882,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "278:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5885,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "315:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5884,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5887,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "329:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5886,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "329:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5889,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "346:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5888,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "346:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "235:133:16"
+            },
+            "returnParameters": {
+              "id": 5891,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "375:0:16"
+            },
+            "scope": 5928,
+            "src": "203:173:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5905,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifierApprovalPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5903,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5894,
+                  "name": "tokenAddrToReceiveVerifierNotice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "416:40:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5893,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "416:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5896,
+                  "name": "verifierTypeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "458:27:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5895,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "458:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5898,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "495:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5897,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "495:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5900,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "509:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5899,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "509:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5902,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "526:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5901,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "526:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "415:133:16"
+            },
+            "returnParameters": {
+              "id": 5904,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "555:0:16"
+            },
+            "scope": 5928,
+            "src": "382:174:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5918,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifierRejectionPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5916,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5907,
+                  "name": "tokenAddrToReceiveVerifierNotice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "597:40:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5906,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "597:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5909,
+                  "name": "verifierTypeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "639:27:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5908,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "639:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5911,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "676:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5910,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "676:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5913,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "690:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5912,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "690:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5915,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "707:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5914,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "707:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "596:133:16"
+            },
+            "returnParameters": {
+              "id": 5917,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "736:0:16"
+            },
+            "scope": 5928,
+            "src": "562:175:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5927,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimRejectionPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5925,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5920,
+                  "name": "tokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5927,
+                  "src": "775:20:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5919,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5922,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5927,
+                  "src": "797:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5921,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "797:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5924,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5927,
+                  "src": "811:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5923,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "811:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "774:53:16"
+            },
+            "returnParameters": {
+              "id": 5926,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "834:0:16"
+            },
+            "scope": 5928,
+            "src": "743:92:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5929,
+        "src": "26:812:16"
+      }
+    ],
+    "src": "0:839:16"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/cantonioupao/susDAO-saveMe/FIN4Contracts/contracts/stub/Fin4ClaimingStub.sol",
+    "exportedSymbols": {
+      "Fin4ClaimingStub": [
+        5928
+      ]
+    },
+    "id": 5929,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5866,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:16"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5928,
+        "linearizedBaseContracts": [
+          5928
+        ],
+        "name": "Fin4ClaimingStub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5879,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimApprovedPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5877,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5868,
+                  "name": "tokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "90:20:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5867,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "90:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5870,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "112:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5869,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "112:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5872,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "129:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5871,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "129:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5874,
+                  "name": "quantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "143:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5873,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "143:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5876,
+                  "name": "Fin4ClaimingHasMinterRole",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5879,
+                  "src": "158:30:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5875,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "89:100:16"
+            },
+            "returnParameters": {
+              "id": 5878,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "196:0:16"
+            },
+            "scope": 5928,
+            "src": "59:138:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5892,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifierPendingPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5890,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5881,
+                  "name": "tokenAddrToReceiveVerifierNotice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "236:40:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5880,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5883,
+                  "name": "verifierTypeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "278:27:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5882,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "278:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5885,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "315:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5884,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5887,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "329:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5886,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "329:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5889,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5892,
+                  "src": "346:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5888,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "346:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "235:133:16"
+            },
+            "returnParameters": {
+              "id": 5891,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "375:0:16"
+            },
+            "scope": 5928,
+            "src": "203:173:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5905,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifierApprovalPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5903,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5894,
+                  "name": "tokenAddrToReceiveVerifierNotice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "416:40:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5893,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "416:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5896,
+                  "name": "verifierTypeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "458:27:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5895,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "458:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5898,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "495:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5897,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "495:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5900,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "509:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5899,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "509:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5902,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5905,
+                  "src": "526:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5901,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "526:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "415:133:16"
+            },
+            "returnParameters": {
+              "id": 5904,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "555:0:16"
+            },
+            "scope": 5928,
+            "src": "382:174:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5918,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifierRejectionPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5916,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5907,
+                  "name": "tokenAddrToReceiveVerifierNotice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "597:40:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5906,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "597:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5909,
+                  "name": "verifierTypeAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "639:27:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5908,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "639:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5911,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "676:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5910,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "676:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5913,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "690:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5912,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "690:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5915,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "707:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5914,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "707:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "596:133:16"
+            },
+            "returnParameters": {
+              "id": 5917,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "736:0:16"
+            },
+            "scope": 5928,
+            "src": "562:175:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5927,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimRejectionPingback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5925,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5920,
+                  "name": "tokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5927,
+                  "src": "775:20:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5919,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5922,
+                  "name": "claimId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5927,
+                  "src": "797:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5921,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "797:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5924,
+                  "name": "claimer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5927,
+                  "src": "811:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5923,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "811:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "774:53:16"
+            },
+            "returnParameters": {
+              "id": 5926,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "834:0:16"
+            },
+            "scope": 5928,
+            "src": "743:92:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5929,
+        "src": "26:812:16"
+      }
+    ],
+    "src": "0:839:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.1",
+  "updatedAt": "2020-12-03T18:31:09.749Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
