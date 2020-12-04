@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/custom.css" rel='stylehsheet'>
+    <meta name="apple-mobile-web-app-title" content="SaveMe">
+    <meta name="application-name" content="SaveMe">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>SaveMe - A token for Health</title>
+    <style>
+        *,
+        html {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /*background-color: rgb(0,253, 160); */
+            background-image: url('assets/background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            }
+
+
+            .wave {
+            animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+            animation-duration: 2.5s;        /* Change to speed up or slow down */
+            animation-iteration-count: infinite;  /* Never stop waving :) */
+            transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+            display: inline-block;
+            }
+
+            @keyframes wave-animation {
+            0% { transform: rotate( 0.0deg) }
+            10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+            20% { transform: rotate(-8.0deg) }
+            30% { transform: rotate(14.0deg) }
+            40% { transform: rotate(-4.0deg) }
+            50% { transform: rotate(10.0deg) }
+            60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+            100% { transform: rotate( 0.0deg) }
+            }
+
+
+
+
+            @keyframes rotation {
+        0% {
+            transform: rotate3d(0, 1, 0, 0deg);
+        }
+        50% {
+            transform: rotate3d(0, 1, 0, 180deg);
+        }
+        100% {
+            transform: rotate3d(0, 1, 0, 360deg);
+        }
+        }
+        .container {
+        background-color: transparent;
+        width: 100px;
+        height: 100px;
+        perspective: 1000;
+        margin: 1em auto;
+        }
+        .coin {
+        position: center;
+        top: 25px;
+        left: 25px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 50px;
+        animation-name: rotation;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: 2.5s;
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+        border-radius: 50%; 
+        border-color :rgb(0, 255, 34);
+        border-width:2px;
+        }
+        .face {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        backface-visibility: hidden;
+        background-image: url('assets/circle-cropped.png');
+        background-repeat: no-repeat;
+        background-size: 130% 130%;
+        background-color: black;
+        background-position: center;
+        }
+        .heads {
+        z-index: 2;
+        transform: rotateY(0deg);
+        background-image: url('assets/circle-cropped.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: black;
+        background-position: center;
+        }
+        .tails {
+        background-image: url('assets/circle-cropped.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: black;
+        background-position: center;
+        z-index: 1;
+        transform: rotateY(180deg);
+        }
+
+  
+
+        .center {
+            width: 100%;
+            height: 75%;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            text-align: center;
+        }
+
+
+
+        
+
+        h1 {
+            font-size: 80px;
+            color: white;
+            text-shadow: white 0px 0px 0px;
+        }
+
+        h4 { font-size: 64px;
+            color:rebeccapurple;
+            text-shadow: white 0px 1px 0px;
+        }
+
+        /*This is the header responsible for placing the verything left*/
+        h6 {font-size:60px ;
+            color: black;
+            text-shadow: white 0px 0px 0px;
+        }
+        .left-header{
+            text-align: left; 
+        }
+
+        .right-header{
+            text-align: right; 
+        }
+
+    
+
+        .btn-circle.btn-xl-tick{ 
+            width: 100px; 
+            height: 100px; 
+            bottom: 180px;
+            right: 180px; 
+            border-radius: 50%; 
+            background-image: url('assets/tick2.png');
+            background-repeat: no-repeat;
+            background-size: 130% 130%;
+            background-color: black;
+            background-position: center;
+            border-radius: 50%; 
+            border-color :rgb(0, 255, 34);
+            border-width:0px;
+        } 
+
+
+
+        .btn-circle.btn-xl-send{ 
+            width: 100px; 
+            height: 100px; 
+            bottom: 180px;
+            right: 180px; 
+            background-image: url('assets/send.png');
+            background-repeat: no-repeat;
+            background-size: 120% 120%;
+            background-position: center;
+            border-radius: 50%; 
+            border-width:0px;
+            border-color :rgb(0, 0, 0);
+            font-size: 0px; 
+        } 
+
+        h2 { font-size: 64px;
+            color:rgb(3, 3, 3);
+            text-shadow: white 0px 1px 0px;
+        }
+
+        img {size : 60% 60%;
+            width: 200px; 
+            height: 200px; 
+            bottom: 200px;
+            right: 200px; 
+            
+        }
+
+        p {
+            font-size: 64px;
+            color: white;
+            text-shadow: white 0px 0px 0px;
+        }
+
+        p1 {
+            font-size: 64px;
+            color: white;
+            text-shadow: white 0px 0px 0px;
+        }
+
+        p2 {
+            font-size: 24px;
+            color: white;
+        
+        }
+
+        p1, h2 {display:inline;}
+        p2, h4 {display:inline;}
+        p1, h1 {display:inline;}
+    
+
+    </style>
+
+
+</head>
+
+<body>
+    <audio id="alert" src="warning_sound.mp3" preload="auto"></audio>
+    <div class="center">
+        <h1 style="display:inline;">
+            <span style="margin-right:10%;"> 
+                
+            </span>
+
+            <span style="margin-left:00%;"></span>
+                Welcome back Sweetheart!
+            </span> 
+            <span  style="margin-right:5%;"></span>
+                <h1 class="wave">👋</h1>
+            </span> 
+            <span style="margin-left:0%;"></span>
+               
+            </span> 
+        </h1>
+  
+  <script>
+
+            
+        var button_measurements = document.getElementById("measurement-button");//get the elements form the htlm file
+        var button_send = document.getElementById("send-message"); //get the send button from the html file
+
+        function send_token(){
+            location.href = "http://cdfb9192f529.ngrok.io/send_token_page"; //get the measurements page
+        }
+
+            
+
+        function measurement_page() {
+            location.href = "http://cdfb9192f529.ngrok.io/measurement_page"; //get the send token page
+        }
+
+
+        console.log('I am about to fetch the post data from the sensor');
+        const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
+        let red = false;
+
+
+        async function getSensorData(){
+            const response = await fetch('http://cdfb9192f529.ngrok.io/sensor_data', options);//, options); //options could include many things
+            const data = await response.json() ;
+            let last_measurement = parseFloat(data.data);
+            console.log(data.data); //print last measurement
+            //document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
+            if (last_measurement <=3.0 || last_measurement>=9.5)
+            {
+                document.getElementById("measurement-button").style.backgroundImage = "url('assets/warning2.png')";
+                //document.getElementById("alert").play(); //enable only when you have fixed the AJAX automatic requests
+                //alert("Sugar levels out of range!");
+                red = true ;   
+            }
+            else {  if(red=true){
+                document.getElementById("measurement-button").style.backgroundImage = "url('assets/tick2.png')";
+                red = false ;
+                alert_once  = false ; }
+                //otherwise do nothing
+            }
+        }
+
+
+        async function getTokenQuantity(){
+            const response = await fetch('http://cdfb9192f529.ngrok.io/token_quantity', options);//, options); //options could include many things
+            const data = await response.json() ;
+            console.log(data.quantity); //print last measurement
+            document.getElementById('quantity').textContent = data["quantity"];
+            //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
+        }
+        /*fetch('/sensor_data')
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(data){
+            console.log('the data', data)
+        })  */
+        getSensorData(); //get first data once we loaded it
+        getTokenQuantity();
+        setInterval(getSensorData, 3000);  //receive requests every 1 second
+        setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
+
+
+    </script>
+        
+        <p><br></p>
+
+        
+
+
+        <p1>SaveMe </p1>
+
+        <p></p>
+        <div class="container">
+        <div class="coin">
+            <div class="face heads">
+             
+            </div>
+            <div class="face tails">
+              
+            </div>
+        </div>
+        </div>
+        
+        <p2>Total token count is:</p2> 
+
+        <p> </p>
+
+        <h4 id="quantity"> --- </h4>
+
+        <p> </p>
+        <img src="assets/myqrcode.png">
+        <p> </p>
+
+        
+
+    
+        <h6 style="display:inline;">
+            <span style="margin-left:0%;"> 
+                <button id= "measurement-button" type="button" onclick="measurement_page()" class="btn btn-primary btn-circle btn-xl-tick"></button>
+            </span>
+
+            <span style="margin-left:70%;"></span>
+                <button id= "send-message" type="button" onclick = "send_token()" class="btn btn-primary btn-circle btn-xl-send" ></button> 
+            </span> 
+        </h6>
+ 
+    </div>
+
+   
+</body>
+
+
+
+<div class="container">
+    
+  </div>
+
+</html>
