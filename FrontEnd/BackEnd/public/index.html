@@ -153,12 +153,12 @@
         
 
         h1 {
-            font-size: 80px;
+            font-size: 70px;
             color: white;
             text-shadow: white 0px 0px 0px;
         }
 
-        h4 { font-size: 64px;
+        h4 { font-size: 50px;
             color:rebeccapurple;
             text-shadow: white 0px 1px 0px;
         }
@@ -176,7 +176,32 @@
             text-align: right; 
         }
 
-    
+
+        .btn-circle.btn-xl-tokens{ 
+            width: 100px; 
+            height: 100px; 
+            bottom: 100px;
+            right: 100px; 
+            text-align : center ;
+            background-color: transparent;
+            background-position: top ;
+            border-radius: 30% ;
+            
+        } 
+
+        .btn-circle.btn-xl-menu{ 
+            width: 100px; 
+            height: 100px; 
+            bottom: 180px;
+            right: 180px; 
+            background-image: url('assets/menu1.png');
+            background-repeat: no-repeat;
+            background-size: 90% 110%;
+            background-color: transparent;
+            background-position: center ;
+            border-radius: 1% 1% 25% 1%;
+            
+        } 
 
         .btn-circle.btn-xl-tick{ 
             width: 100px; 
@@ -249,13 +274,17 @@
 
     </style>
 
-
+</span>
 </head>
 
 <body>
-    <audio id="alert" src="warning_sound.mp3" preload="auto"></audio>
+    <span style="margin-left:0%;"> 
+        <button id= "menu-button" type="button" onclick="menu_page()" class="btn btn-primary btn-circle btn-xl-menu "></button>
+    </span>
     <div class="center">
+        
         <h1 style="display:inline;">
+
             <span style="margin-right:10%;"> 
                 
             </span>
@@ -271,20 +300,81 @@
             </span> 
         </h1>
   
-  <script>
+   
+        
+        <p><br></p>
 
-            
+        
+
+
+        <p1>SaveMe </p1>
+
+        <p></p>
+        <div class="container">
+        <div class="coin">
+            <div class="face heads">
+             
+            </div>
+            <div class="face tails">
+              
+            </div>
+        </div>
+        </div>
+        
+        <p2>Total token count is:</p2> 
+        <p> </p>
+
+        <span style="margin-left:0%;"> 
+            <button id= "tokens-button" type="button" onclick=" tokens_page()" class="btn btn-primary btn-circle btn-xl-tokens">  <h4 id=quantity > --- </h4> </button>
+        </span>  
+
+        <p> </p>
+        <canvas id="canvas" width="500" height="300" ></canvas>
+        <p> </p>
+
+        
+
+    
+        <h6 style="display:inline;">
+            <span style="margin-left:0%;"> 
+                <button id= "measurement-button" type="button" onclick=" measurement_page()" class="btn btn-primary btn-circle btn-xl-tick"></button>
+            </span>
+
+            <span style="margin-left:70%;"></span>
+                <button id= "send-message" type="button" onclick = "send_token()" class="btn btn-primary btn-circle btn-xl-send" ></button> 
+            </span> 
+        </h6>
+ 
+    </div>
+
+
+
+    <script src = "bundle.js" ></script>
+
+    <script>
+
+    
         var button_measurements = document.getElementById("measurement-button");//get the elements form the htlm file
         var button_send = document.getElementById("send-message"); //get the send button from the html file
-
+        
         function send_token(){
             location.href = "http://cdfb9192f529.ngrok.io/send_token_page"; //get the measurements page
+        }
+
+
+        function menu_page() {
+
+            location.href = 'http://http://cdfb9192f529.ngrok.io/menu_page'
         }
 
             
 
         function measurement_page() {
             location.href = "http://cdfb9192f529.ngrok.io/measurement_page"; //get the send token page
+        }
+
+        function tokens_page(){
+            location.href = "http://cdfb9192f529.ngrok.io/tokens_page"; //get tokens page
         }
 
 
@@ -322,64 +412,14 @@
             document.getElementById('quantity').textContent = data["quantity"];
             //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
         }
-        /*fetch('/sensor_data')
-        .then(function(response) {
-            return response.json()
-        })
-        .then(function(data){
-            console.log('the data', data)
-        })  */
-        getSensorData(); //get first data once we loaded it
-        getTokenQuantity();
-        setInterval(getSensorData, 3000);  //receive requests every 1 second
-        setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
+
+        //getSensorData(); //get first data once we loaded it
+        //getTokenQuantity();
+        //setInterval(getSensorData, 3000);  //receive requests every 1 second
+        //setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
 
 
     </script>
-        
-        <p><br></p>
-
-        
-
-
-        <p1>SaveMe </p1>
-
-        <p></p>
-        <div class="container">
-        <div class="coin">
-            <div class="face heads">
-             
-            </div>
-            <div class="face tails">
-              
-            </div>
-        </div>
-        </div>
-        
-        <p2>Total token count is:</p2> 
-
-        <p> </p>
-
-        <h4 id="quantity"> --- </h4>
-
-        <p> </p>
-        <img src="assets/myqrcode.png">
-        <p> </p>
-
-        
-
-    
-        <h6 style="display:inline;">
-            <span style="margin-left:0%;"> 
-                <button id= "measurement-button" type="button" onclick="measurement_page()" class="btn btn-primary btn-circle btn-xl-tick"></button>
-            </span>
-
-            <span style="margin-left:70%;"></span>
-                <button id= "send-message" type="button" onclick = "send_token()" class="btn btn-primary btn-circle btn-xl-send" ></button> 
-            </span> 
-        </h6>
- 
-    </div>
 
    
 </body>
