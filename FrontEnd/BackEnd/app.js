@@ -244,13 +244,12 @@ app.post('/token', (request, response) => {
 	let sensorID = postBody.id;
 	let timestamp = Math.round(moment().valueOf());
 	let data = postBody.average;
-	callFin4OracleHub(sensorID, timestamp, data, response);
 	postBody["date"] = (new Date()).getTime();//postBody["counter"] = counter; //add the counter field
-  	token_database.insert(postBody); 
-    console.log("Server received token average" , postBody);
+  token_database.insert(postBody); 
+  console.log("Server received token average" , postBody);
 	//if (id_verified) // if id is verified then return a success maeesage
 	//Check List with verified IDs
-    response.write("Token verified");
+  response.write("Token verified");
     
   });
 
