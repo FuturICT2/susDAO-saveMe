@@ -12,14 +12,14 @@ int SENSOR_PIN = A0;   //don't really need it
 boolean token = false;
 
 //Network parameters
-const char* ssid = "3Blue1Brown"; //SSID of your Wi-Fi router
-const char* pass = "Poseidonos201!";
+const char* ssid = "Type Wifi SSID"; //SSID of your Wi-Fi router
+const char* pass = "Type password";
 char accessToken[] = "SaveMe";
 
 //Address
-char pingAddress[] = "patse address here"; // sensor ping end point
-char verificationAddress[] = "paste address here/token"; // Claim verification end point with /token
-char dataAddress[] =  "patse address here/sensor_data"; // Claim verification end point with/sensor_data
+char pingAddress[] = "Paste here ngrok address"; // sensor ping end point
+char verificationAddress[] = "paste here/token"; // Claim verification end point with /token
+char dataAddress[] =  "paste here/sensor_data"; // Claim verification end point with/sensor_data
 byte MAC[6] ; 
 
 String id;
