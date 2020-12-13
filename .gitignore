@@ -3547,3 +3547,6 @@ node_modules/wrappy/LICENSE
 node_modules/wrappy/package.json
 node_modules/wrappy/README.md
 node_modules/wrappy/wrappy.js
+
+.vscode/arduino.json
+.vscode/c_cpp_properties.json
