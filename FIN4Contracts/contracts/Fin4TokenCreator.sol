@@ -12,7 +12,7 @@ contract Fin4TokenCreator {
     event NewFin4TokenAddress(address tokenAddress);
 
     using Strings for string;
-
+    
     address public Fin4ClaimingAddress;
     address public Fin4TokenManagementAddress;
     address public Fin4UnderlyingsAddress;

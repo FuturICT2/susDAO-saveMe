@@ -1,0 +1,6 @@
+{
+    "ORACLE_ACCOUNT": { "MNEMONIC":"fire emerge swarm culture doll edit rib coyote dish click dentist circle" , "PRIVATE_KEY":"9177d782c863ce2a988a46d2fcedb717c7423f52b0234b28076542d61f9aeb98"},
+    "comments": "This is a configuration file with the address to connect to the Ethereum local blockchain",
+    "runtime": "VS",
+    "safe": true
+  }

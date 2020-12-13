@@ -364,7 +364,7 @@
 
         function menu_page() {
 
-            location.href = 'http://http://cdfb9192f529.ngrok.io/menu_page'
+            location.href = "http://cdfb9192f529.ngrok.io/menu_page"
         }
 
             
@@ -413,10 +413,10 @@
             //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
         }
 
-        //getSensorData(); //get first data once we loaded it
-        //getTokenQuantity();
-        //setInterval(getSensorData, 3000);  //receive requests every 1 second
-        //setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
+        getSensorData(); //get first data once we loaded it
+        getTokenQuantity();
+        setInterval(getSensorData, 3000);  //receive requests every 1 second
+        setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
 
 
     </script>
