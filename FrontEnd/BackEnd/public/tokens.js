@@ -1,9 +1,10 @@
 console.log('I am about to fetch the token post data from the sensor');
 
-
-
+            var ngrok_address = "http://bf9f06dbf42c.ngrok.io"
+            var token_quantity_address = ngrok_address + "/token_quantity";
+            var token_address = ngrok_address + "/token";
             async function getTokenQuantity(){
-            const response = await fetch('http://cdfb9192f529.ngrok.io/token_quantity', options);//, options); //options could include many things
+            const response = await fetch(token_quantity_addres, options);//, options); //options could include many things
             const data = await response.json() ;
             console.log(data.quantity); //print last measurement
             document.getElementById('quantity').textContent = data["quantity"];
@@ -15,7 +16,7 @@ console.log('I am about to fetch the token post data from the sensor');
 
 
             async function getToken(){
-                const response = await fetch('http://cdfb9192f529.ngrok.io/token', options);//, options); //options could include many things
+                const response = await fetch(token_address, options);//, options); //options could include many things
                 const data = await response.json() ;
                 console.log(data.average); //print last measurement / equivalent to data["average"]
                 document.getElementById('average').textContent = data["average"];//toFixed(2)//set it only to 2 decimal places if is it an integer
