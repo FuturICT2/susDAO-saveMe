@@ -311,3 +311,5 @@ FIN4Xplorer1/src/build/contracts/Trigonometry.json
 FIN4Xplorer1/src/build/contracts/utils.json
 FIN4Xplorer1/src/build/contracts/VideoVoting.json
 FIN4Xplorer1/src/build/contracts/Vote.json
+bin/SaveMeContracts/contracts/SaveMeMain-solc-output.json
+node_modules/
