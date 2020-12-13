@@ -9,37 +9,68 @@ For a token to be awarded, the average of the 4 quarter measurements (average of
 
 ## Required Software
 To run the application, you will need the following software:
--VS (Easier to run application)
--Nodejs
--Ganache
--Truffle
+- VS (Visual Studio)
+- Nodejs
+- Ganache
+- Truffle
+- ngrok
 
+## Required Hardware
 For full functionality, make sure you have:
--Sensor to POST data
--ngrok to expose localhost to a public web address
+- Sensor to POST data ( *ESP32* or *Arduino* )
+
 
 
 ## How to run?
 1. Download directory either manually or using git clone
+    ```sh
+    git clone "https:github/saveMe"
+    ```
 2. Open project folder with VS
 3. Download all necessary packages with npm
+    ```sh
+    npm start
     npm install
+    ```
 4. Server website and expose localhost to a public address for sensor to send data
-    a)Start ngrok in a Terminal, where your localhost:8000 will be exposed
+    *a)* Start ngrok in a Terminal, where your - `localhost:8000 ` will be exposed
+
+    ```sh
     ./ngrok http 8000
-    b)Copy ngrok main public address
+    ```
+    *b)* Copy ngrok main public address
 
 5. Change the ngrok public address for all relevant files
-    a) Go to HTML files and change public address
-        FontEnd->BackEnd->public->index.js & measurement.jss & tokens.js and paste the new ngrok_address
-    b) Go to Arduino file and change address
-        SaveMeSensors->main.ino and paste the new address
+    *a)* Go to HTML files and change public address
+        
+    ```sh
+    cd FontEnd/BackEnd/public 
+    ```
+    and go to
+    ```sh
+    index.js
+    measurement.js
+    tokens.js
+    ```
+    paste the new ngrok public address under:
+    **ngrok_address**
+    
+    *b)* Go to Arduino file 
+    ```sh
+    main.ino
+    ``` 
+    and change address by pasting the ngrok public address
 
 6. Update Sensor file main.ino with your home's Network Login details
 
-7. Verify and Upload main.ino in Sensor(ESP32 or Arduino)
+7. Verify and Upload **main.ino** in Sensor(ESP32 or Arduino)
 
 8. Go to directory of application file
+    ```sh
     cd FrontEnd/BackEnd
+    ```
+    
 9. Run appplication in VS using Node
+    ```sh
     node app.js
+    ```
