@@ -20,7 +20,7 @@ contract SaveMeToken is ERC20StandardInterface , ERC20Plus {
     bool public isMintable = true ;
     uint256 public totalSupply;
     uint8 decimals = 0 ; //we don't want our token to be divisable
-    address private TokenValidationAddress = ;//
+    address private TokenValidationAddress // = ;//
 
     event Transfer(
         address indexed _from,
