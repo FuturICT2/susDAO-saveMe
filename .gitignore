@@ -3,6 +3,7 @@ FIN4Contracts/
 FIN4OracleEngine1/
 FIN4Xplorer1/
 FIN4Contracts/.gitignore
+.vscode/.gitignore
 FIN4Contracts/LICENSE
 FIN4Contracts/package.json
 FIN4Contracts/README.md
