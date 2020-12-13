@@ -353,28 +353,33 @@
 
     <script>
 
-    
+        var ngrok_address = "http://cdfb9192f529.ngrok.io";
         var button_measurements = document.getElementById("measurement-button");//get the elements form the htlm file
         var button_send = document.getElementById("send-message"); //get the send button from the html file
+        var send_token_page_address = ngrok_address+ "/send_token_page";
+        var menu_page_address = ngrok_address+"/menu_page";
+        var measurement_page_address =  ngrok_address + "/measurement_page";
+        var token_page_address = ngrok_address+ "/tokens_page";
+        var token_quantity_address = ngrok_address + "/token_quantity";
+        var sensor_data_address = ngrok_address + "/sensor_data";
         
         function send_token(){
-            location.href = "http://cdfb9192f529.ngrok.io/send_token_page"; //get the measurements page
+            location.href = send_token_page_address ; //get the measurements page
         }
 
 
         function menu_page() {
 
-            location.href = "http://cdfb9192f529.ngrok.io/menu_page"
+            location.href = menu_page_address;
         }
 
-            
 
         function measurement_page() {
-            location.href = "http://cdfb9192f529.ngrok.io/measurement_page"; //get the send token page
+            location.href = measurement_page_address; //get the send token page
         }
 
         function tokens_page(){
-            location.href = "http://cdfb9192f529.ngrok.io/tokens_page"; //get tokens page
+            location.href = token_page_address; //get tokens page
         }
 
 
@@ -384,7 +389,7 @@
 
 
         async function getSensorData(){
-            const response = await fetch('http://cdfb9192f529.ngrok.io/sensor_data', options);//, options); //options could include many things
+            const response = await fetch(sensor_data_address, options);//, options); //options could include many things
             const data = await response.json() ;
             let last_measurement = parseFloat(data.data);
             console.log(data.data); //print last measurement
@@ -406,7 +411,7 @@
 
 
         async function getTokenQuantity(){
-            const response = await fetch('http://cdfb9192f529.ngrok.io/token_quantity', options);//, options); //options could include many things
+            const response = await fetch( token_quantity_address ,options);//, options); //options could include many things
             const data = await response.json() ;
             console.log(data.quantity); //print last measurement
             document.getElementById('quantity').textContent = data["quantity"];
