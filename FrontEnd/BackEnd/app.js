@@ -148,26 +148,17 @@ let callFin4OracleHub = async function(sensorID, timestamp, data, response) {
 
 /* Application routes */
 
-/* Use this for catching errors
-
-  response.wres.sendStatus(200)
-  // === res.status(200).send('OK')
-  
-  res.sendStatus(403)
-  // === res.status(403).send('Forbidden')
-  
-  res.sendStatus(404)
-  // === res.status(404).send('Not Found')
-  
-  res.sendStatus(500)
-  // === res.status(500).send('Internal Server Error')    */
-
-
+app.post('/', (request,response) => { //handle post requests to the server
+  console.log(request.body);
+  response.send("200");
+});
 
 app.get('/', (request, response) =>  { //handle get requests to the server
   app.set('view engine', 'html'); 
   response.status(200).sendFile(`/../FrontEnd/public/index.html`);
 });
+
+
 
 
 app.get('/measurement_page', (request,response) => {
@@ -200,21 +191,18 @@ app.get('/send_token_page', (request,response) => {
 
 
 
-app.post('/', (request,response) => { //handle post requests to the server
-  console.log(request.body);
-  response.send("200");
-});   
-
 app.post('/sensor_data', (request, response) => {
   const postBody = request.body;
-  let timestamp = (new Date()).getTime();
+  var timestamp = (new Date()).getTime();
   var id = postBody.id ;
   postBody["date"] = timestamp;//postBody["counter"] = counter; //add the counter field
   database.insert(postBody) ; 
   //add new measurement in text file
   let  new_measurement  = postBody.data + String(timestamp) ;
-  
-  
+  console.log("Server received sensor measurements" , postBody); //print the POST data received
+  //if (id_verified) // if id is verified then return a success maeesage
+  response.write("Measurement received");
+
   //Save Measurements in IPFS
   /*
   fs.writeFile('new_measurement.txt', new_measurement, (err) => { 
@@ -228,11 +216,6 @@ app.post('/sensor_data', (request, response) => {
 
   //retrieve previous measurements using the corresponding IPNS address
   console.log(await ipfs.cat(ipfsHash));
-
-
-  console.log("Server received sensor measurements" , postBody); //print the POST data received
-  //if (id_verified) // if id is verified then return a success maeesage
-  response.write("Measurement received");
   */
   
 });
