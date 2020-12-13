@@ -120,6 +120,23 @@ let callFin4OracleHub = async function(sensorID, timestamp, data, response) {
 
 
 4.  Use AJAX to automatically update when a POST is received   
+
+5.  Set  up Shadow account
+    a) Generate a Public-Private key pair
+    b) Access list IDs associated with ETH addresses
+
+6.  Create IPNS with mutable link for each user
+    a)For measurements
+    b)For total average glucose level calculations for token reward
+
+7.  Upon new POST request get ETH address, based on received Sensor ID
+
+8.  Download IPFS of corresponding Patient using assigned IPNS link
+    Decrypt file using Shadow's private key
+    Add new measurement to downloaded text file 
+    -Encrypt IPFS file with patients public key and with Shadow's account public key
+   -Reupload txt IPFS file 
+   -IPNS link for this patient will point to the new hash of uploaded file
 */
 
 
