@@ -1,9 +1,0 @@
-{
-	"name": "fin4contracts",
-	"version": "0.5.0",
-	"dependencies": {
-		"@openzeppelin/contracts": "^2.5.0",
-		"@truffle/hdwallet-provider": "^1.0.18",
-		"solidity-util": "github:willitscale/solidity-util"
-	}
-}
