@@ -1,6 +1,7 @@
 const express = require('express'); //linrary to allow web development
 const app = express(); //create an app
 const port = 8000;
+const path = require('path');
 const ejs = require('ejs') ; //embedded javascript templates
 const ipfsClient = require('ipfs-http-client');
 const ipfs = new ipfsClient({host: 'localhost', port: '5001' ,protocol: 'http'});//Connect to the IPFS daemon node
@@ -24,9 +25,9 @@ const provider = new HDWalletProvider(config.ORACLE_ACCOUNT.MNEMONIC, networkURL
 const web3 = new Web3(provider); //define a Web3 etheureum node by parsing the address and the Ethereum Client URL
 const accountAddress = web3.currentProvider.addresses[0];
 const privateKey = Buffer.from(config.ORACLE_ACCOUNT.PRIVATE_KEY, 'hex'); //get again alsoo the private keys from OracleHub.json 
-const Fin4OracleHubABI = require('./Fin4OracleHub.json').abi; //parse in the JSON format of the compiled SC
-const contract = new web3.eth.Contract(Fin4OracleHubABI); //retrieve the contract from the ABI
-const contractAddress = config.Fin4OracleHubAddress;  //get the address of the contract
+//const Fin4OracleHubABI = require('./Fin4OracleHub.json').abi; //parse in the JSON format of the compiled SC
+//const contract = new web3.eth.Contract(Fin4OracleHubABI); //retrieve the contract from the ABI
+//const contractAddress = config.Fin4OracleHubAddress;  //get the address of the contract
 const database = new Datastore({filename:'data_database.db', timestampData : false}); //do not timestamp the data 
 const token_database= new Datastore({filename:"token_database.db", timestampData : false}); //only add the server id => "_id"
 
@@ -171,14 +172,14 @@ app.get('/', (request, response) =>  { //handle get requests to the server
 
 app.get('/measurement_page', (request,response) => {
   
-  response.sendFile(path.resolve(__dirname+`/public/measurements.html`)) //try to avoid relative paths, they say it is the hackers first try
+  response.sendFile(path.resolve(`./public/measurements.html`)) //try to avoid relative paths, they say it is the hackers first try
 
 });
 
 
 app.get('/menu_page', (request,response) => {
   
-  response.sendFile(path.resolve(__dirname+`/public/menu.html`)) //try to avoid relative paths, they say it is the hackers first try
+  response.sendFile(path.resolve(`./public/menu.html`)) //try to avoid relative paths, they say it is the hackers first try
 
 });
 
@@ -186,14 +187,14 @@ app.get('/menu_page', (request,response) => {
 
 app.get('/tokens_page', (request,response) => {
   
-  response.sendFile(path.resolve(__dirname+`/public/tokens.html`)) //try to avoid relative paths, they say it is the hackers first try
+  response.sendFile(path.resolve(`./public/tokens.html`)) //try to avoid relative paths, they say it is the hackers first try
 
 });
 
 
 app.get('/send_token_page', (request,response) => {
     
-    response.sendFile(path.resolve(__dirname+`/public/send.html`)) //try to avoid relative paths, they say it is the hackers first try
+    response.sendFile(path.resolve(`./public/send.html`)) //try to avoid relative paths, they say it is the hackers first try
 
 });
 

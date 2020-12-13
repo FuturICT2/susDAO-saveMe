@@ -109,53 +109,7 @@
 <body>
     <div class="center">
         <h1></h1>
-        <script> 
-            console.log('I am about to fetch the post data from the sensor');
-            const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
-
-            async function getSensorData(){
-                const response = await fetch('http://cdfb9192f529.ngrok.io/sensor_data', options);//, options); //options could include many things
-                const data = await response.json() ;
-                console.log(data.data); //print last measurement
-                document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
-            }
-
-
-             function open_scanner ()
-             {  location.href = "https://webqr.com/index.html"
-                 //call the intent to open the QR code scanner
-             }
-
-
-            async function getToken(){
-                const response = await fetch('http://cdfb9192f529.ngrok.io/token', options);//, options); //options could include many things
-                const data = await response.json() ;
-                console.log(data.average); //print last measurement / equivalent to data["average"]
-                document.getElementById('average').textContent = data["average"];//toFixed(2)//set it only to 2 decimal places if is it an integer
-            }
-
-
-            async function getTokenQuantity(){
-                const response = await fetch('http://cdfb9192f529.ngrok.io/token_quantity', options);//, options); //options could include many things
-                const data = await response.json() ;
-                console.log(data.quantity); //print last measurement
-                document.getElementById('quantity').textContent = data["quantity"];
-                //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
-            }
-            /*fetch('/sensor_data')
-            .then(function(response) {
-                return response.json()
-            })
-            .then(function(data){
-                console.log('the data', data)
-            })  */
-            getSensorData(); //get first data once we loaded it
-            getToken();
-            getTokenQuantity();
-            setInterval(getSensorData, 3000);  //receive requests every 1 second
-            setInterval(getToken, 3000);  //receive requests every 1 second
-            setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
-        </script>
+        <script src=send.js> </script>
         <p>Send tokens</p>
         <p> <br> </p>
         <img src="assets/circle-cropped.png" alt="Avatar"> <p></p>

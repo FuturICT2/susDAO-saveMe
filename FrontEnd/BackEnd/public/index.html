@@ -41,6 +41,8 @@
             background-size: cover;
             }
 
+            
+
 
             .wave {
             animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
@@ -149,8 +151,7 @@
         }
 
 
-
-        
+       
 
         h1 {
             font-size: 70px;
@@ -159,8 +160,8 @@
         }
 
         h4 { font-size: 50px;
-            color:rebeccapurple;
-            text-shadow: white 0px 1px 0px;
+            color:rgb(170, 243, 221);
+            text-shadow: white 0px, 2px,2px,2px;;
         }
 
         /*This is the header responsible for placing the verything left*/
@@ -178,20 +179,21 @@
 
 
         .btn-circle.btn-xl-tokens{ 
-            width: 100px; 
-            height: 100px; 
+            width: 250px; 
+            height: 60px; 
             bottom: 100px;
             right: 100px; 
             text-align : center ;
             background-color: transparent;
-            background-position: top ;
-            border-radius: 30% ;
+            background-position: center ;
+            border-radius: 20% ;
+            border-width:0px;
             
         } 
 
         .btn-circle.btn-xl-menu{ 
-            width: 100px; 
-            height: 100px; 
+            width: 90px; 
+            height: 90px; 
             bottom: 180px;
             right: 180px; 
             background-image: url('assets/menu1.png');
@@ -200,6 +202,7 @@
             background-color: transparent;
             background-position: center ;
             border-radius: 1% 1% 25% 1%;
+            border-width :0px;
             
         } 
 
@@ -236,7 +239,7 @@
             font-size: 0px; 
         } 
 
-        h2 { font-size: 64px;
+        h2 { font-size: 60px;
             color:rgb(3, 3, 3);
             text-shadow: white 0px 1px 0px;
         }
@@ -250,13 +253,13 @@
         }
 
         p {
-            font-size: 64px;
+            font-size: 60px;
             color: white;
             text-shadow: white 0px 0px 0px;
         }
 
         p1 {
-            font-size: 64px;
+            font-size: 60px;
             color: white;
             text-shadow: white 0px 0px 0px;
         }
@@ -301,17 +304,14 @@
         </h1>
   
    
-        
         <p><br></p>
 
         
-
-
         <p1>SaveMe </p1>
 
         <p></p>
         <div class="container">
-        <div class="coin">
+        <div style = "position:relative; top:0%; left:-20%;" class="coin">
             <div class="face heads">
              
             </div>
@@ -324,13 +324,15 @@
         <p2>Total token count is:</p2> 
         <p> </p>
 
-        <span style="margin-left:0%;"> 
-            <button id= "tokens-button" type="button" onclick=" tokens_page()" class="btn btn-primary btn-circle btn-xl-tokens">  <h4 id=quantity > --- </h4> </button>
-        </span>  
+        
+        <button id= "tokens-button" type="button" onclick=" tokens_page()" class="btn btn-primary btn-circle btn-xl-tokens"> <h4 id=quantity>---</h4> </button>
+        
 
-        <p> </p>
-        <canvas id="canvas" width="500" height="300" ></canvas>
-        <p> </p>
+        <div >
+            <canvas  id='canvas' width="300" height="100">
+            </canvas>
+        </div>
+        
 
         
 
@@ -341,7 +343,7 @@
             </span>
 
             <span style="margin-left:70%;"></span>
-                <button id= "send-message" type="button" onclick = "send_token()" class="btn btn-primary btn-circle btn-xl-send" ></button> 
+                <button id= "send-message" type="button" onclick = "send_token()" class="btn btn-primary btn-circle btn-xl-send"></button> 
             </span> 
         </h6>
  
@@ -350,83 +352,8 @@
 
 
     <script src = "bundle.js" ></script>
+    <script src = "index.js" ></script>
 
-    <script>
-
-        var ngrok_address = "http://cdfb9192f529.ngrok.io"; //change this address Ctrl+V
-        var button_measurements = document.getElementById("measurement-button");//get the elements form the htlm file
-        var button_send = document.getElementById("send-message"); //get the send button from the html file
-        var send_token_page_address = ngrok_address+ "/send_token_page";
-        var menu_page_address = ngrok_address+"/menu_page";
-        var measurement_page_address =  ngrok_address + "/measurement_page";
-        var token_page_address = ngrok_address+ "/tokens_page";
-        var token_quantity_address = ngrok_address + "/token_quantity";
-        var sensor_data_address = ngrok_address + "/sensor_data";
-        
-        function send_token(){
-            location.href = send_token_page_address ; //get the measurements page
-        }
-
-
-        function menu_page() {
-
-            location.href = menu_page_address;
-        }
-
-
-        function measurement_page() {
-            location.href = measurement_page_address; //get the send token page
-        }
-
-        function tokens_page(){
-            location.href = token_page_address; //get tokens page
-        }
-
-
-        console.log('I am about to fetch the post data from the sensor');
-        const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
-        let red = false;
-
-
-        async function getSensorData(){
-            const response = await fetch(sensor_data_address, options);//, options); //options could include many things
-            const data = await response.json() ;
-            let last_measurement = parseFloat(data.data);
-            console.log(data.data); //print last measurement
-            //document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
-            if (last_measurement <=3.0 || last_measurement>=9.5)
-            {
-                document.getElementById("measurement-button").style.backgroundImage = "url('assets/warning2.png')";
-                //document.getElementById("alert").play(); //enable only when you have fixed the AJAX automatic requests
-                //alert("Sugar levels out of range!");
-                red = true ;   
-            }
-            else {  if(red=true){
-                document.getElementById("measurement-button").style.backgroundImage = "url('assets/tick2.png')";
-                red = false ;
-                alert_once  = false ; }
-                //otherwise do nothing
-            }
-        }
-
-
-        async function getTokenQuantity(){
-            const response = await fetch( token_quantity_address ,options);//, options); //options could include many things
-            const data = await response.json() ;
-            console.log(data.quantity); //print last measurement
-            document.getElementById('quantity').textContent = data["quantity"];
-            //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
-        }
-
-        getSensorData(); //get first data once we loaded it
-        getTokenQuantity();
-        setInterval(getSensorData, 3000);  //receive requests every 1 second
-        setInterval(getTokenQuantity, 3000);  //receive requests every 1 second
-
-
-    </script>
-
-   
 </body>
 
 
