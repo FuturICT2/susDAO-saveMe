@@ -66,7 +66,7 @@ contract HealthInsurance is TokenValidation {
         //The Created IPFS file is encrypted with the address of Insured_party
         //update hash
         //IPFS_hash_Insurance  = deployed_hash_address // IPFS hash is set as
-        
+        //
     }
 
 
