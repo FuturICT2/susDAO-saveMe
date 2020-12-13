@@ -3,15 +3,18 @@ console.log('I am about to fetch the token post data from the sensor');
             var ngrok_address = "http://bf9f06dbf42c.ngrok.io"
             var token_quantity_address = ngrok_address + "/token_quantity";
             var token_address = ngrok_address + "/token";
+            const options = {method: 'GET', headers: { 'Content-Type':'application/json'}, body: JSON.stringify()}
+
             async function getTokenQuantity(){
-            const response = await fetch(token_quantity_addres, options);//, options); //options could include many things
-            const data = await response.json() ;
-            console.log(data.quantity); //print last measurement
-            document.getElementById('quantity').textContent = data["quantity"];
-            //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
-        }
-
-
+                const response = await fetch(token_quantity_address ,options);//, options); //options could include many things
+                const data = await response.json() ;
+                console.log(data.quantity); //print last measurement
+                document.getElementById('quantity').textContent = data["quantity"];
+                
+                //document.getElementById('quantity').textContent = data.quantity; //equivalent data.toFixed(2)//set it only to 2 decimal places 
+            }
+    
+            
             
 
 
@@ -24,7 +27,7 @@ console.log('I am about to fetch the token post data from the sensor');
                 let last_average = parseFloat(data.average);
 
                 //document.getElementById('measurement').textContent = data["data"];  //data.toFixed(2)//set it only to 2 decimal places 
-                if (last_average <=3.0 || last_average>=9.5)
+                if (last_average <=3.0 || last_average>=10)
                 {
                     document.getElementById("average").style.color = "red";
                     above = true ;
@@ -39,5 +42,5 @@ console.log('I am about to fetch the token post data from the sensor');
 
             getToken();
             getTokenQuantity();
-            setInterval(getSensorData, 3000);  //receive requests every 1 second
+            setInterval(getTokenQuantity , 3000);  //receive requests every 1 second
             setInterval(getToken, 3000);  //receive requests every 1 second
