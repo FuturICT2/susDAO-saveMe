@@ -1,8 +1,7 @@
 pragma solidity ^0.5.16;
 
-import 'contracts/tokens/ERC20StandardInterface.sol';
 import 'contracts/tokens/ERC20Plus.sol';
-import 'contracts/util/SafeMath.sol';
+import '@openzeppelin/contracts/math/SafeMath.sol';
 
 
 
@@ -10,23 +9,25 @@ import 'contracts/util/SafeMath.sol';
 
 
 
-contract SaveMeToken is ERC20StandardInterface , ERC20Plus {
+contract SaveMeToken is ERC20Plus {
 
-    using SafeMath for uint256, uint , uint8 ; //use safemath for all math operations to avoid overflows and hacking of your smart contracts
-    string  public name = "SaveMe";
-    string  public symbol = "SVM";
+    using SafeMath for uint256;
+    using SafeMath for uint8; //use safemath for all math operations to avoid overflows and hacking of your smart contracts
+    string  public token_name = "SaveMe";
+    string  public token_symbol = "SVM";
     string  public standard = "SaveMe v1.0";
     string public description = "SaveMe is a Token for Health. It aims to award patients of diabetes around the world, for self-catering and engagement to retain stable blood glucose levels throughout the day";
     uint public tokenCreationTime;
+    address public tokenCreator;
     uint initialSupply; //others can access as well
     address initialSupplyOwner; //others can access as well
     bool public  isBurnable = true ;
     bool public isTransferable = true ;
     bool public isMintable = true ;
-    uint256 public totalSupply;
-    uint8 decimals = 0 ; //we don't want our token to be divisable
-    address private TokenValidationAddress // = ;//
-
+    uint8 public token_decimals = 0 ; //we don't want our token to be divisable
+    
+    mapping(address =>uint256) private balances;
+    mapping (address=> bool) private minters;
     event Transfer(
         address indexed _from,
         address indexed _to,
@@ -45,23 +46,19 @@ contract SaveMeToken is ERC20StandardInterface , ERC20Plus {
     event MinterAdded(
         address indexed account
         );
-
-
-    mapping(address => uint256) public balanceOf;
-    mapping(address => mapping(address => uint256)) public allowance;
+    
     //call an instance of the token and parse in the initial supply, the owner and the token creator address
 
 
-    constructor(uint256 _initialSupply, address _initialSupplyOwner, address _tokenCreator) public {
-        require (_tokenCreator == TokenValidationAddress, "Require only the TokenValidationAddress to be allowed to create anew token"); //Allow only TokenValidation Address to be token creator;
-        ERC20Plus(name, symbol, decimals, address(0), isBurnable, isTransferable, isMintable, _initialSupply, _initialSupplyOwner);
-        tokenCreator = _tokenCreator; //inherit to TokenBase
-        initialSupply = _initialSupply; //inherit to TokenBase
-        initialSupplyOwner = _initialSupplyOwner; //inherited to TokenBase
+    constructor(uint _initialSupply, address _initialSupplyOwner, address _tokenCreator) public {
+        ERC20Plus(token_name, token_symbol, token_decimals, address(0), isBurnable, isTransferable, isMintable, _initialSupply, _initialSupplyOwner);
+        tokenCreator = _tokenCreator;
+        initialSupply = _initialSupply;
+        initialSupplyOwner = _initialSupplyOwner;
     }
 
-    function transfer(address _to, uint256 _value) public returns (bool success) {  //method deploying contract and sending tokens
-        require(balanceOf[msg.sender] >= _value, "Not enough tokens");
+    /* function transfer(address _to, uint256 _value) public returns (bool success) {  //method deploying contract and sending tokens
+        //require(balanceOf[msg.sender] >= _value, "Not enough tokens");
 
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
@@ -93,15 +90,17 @@ contract SaveMeToken is ERC20StandardInterface , ERC20Plus {
         return true;
     }
 
+    */
+
 
 
     function getTokenInfo(address user) public view returns( string memory, string memory,
         string memory, uint256, uint) {
-        return (name(), symbol(), description, totalSupply() , tokenCreationTime);
+        return (name(), symbol(), description, totalSupply(),tokenCreationTime);
     }
 
     function getDetailedTokenInfo() public view returns(uint256, uint256, uint,
-        bool[] memory, string memory, address[] memory) {
+        bool[] memory, string memory) {
 
         bool[] memory props = new bool[](4);
         props[0] = isTransferable;
@@ -114,23 +113,25 @@ contract SaveMeToken is ERC20StandardInterface , ERC20Plus {
         values[1] = uint(decimals());
         values[2] = initialSupply;
 
-        return (balanceOf(msg.sender), totalSupply(), tokenCreationTime, props, values, getInitialSupplyOwnerAndTokenCreatorAndMinterRoles());
+        return (balanceOf(msg.sender), totalSupply(), tokenCreationTime, props, values);
     }
 
-    function mint(address to, uint256 value) public onlyMinter returns (bool);
+    function name() public view returns(string memory){
+            return token_name;
+        }
+    function symbol() public view returns(string memory){
+            return token_symbol;
+    }
 
-    function name() public view returns(string memory);
-    function symbol() public view returns(string memory);
+    // Mint new tokens.
+    // It accepts only an address with Minter Role => Token Validation Contract
 
+    //function isMinter(address account) public view returns (bool);= //Checks if a specific address has Minter Role
 
-    function isMinter(address account) public view returns (bool); //Checks if a specific address has Minter Role
+    //function addMinter(address account) public;//Add an address as a Minter with Minter Role rights
 
-    function addMinter(address account) public; //Add an address as a Minter with Minter Role rights
+    //function renounceMinter() public;//only the address that has Minter roles can renounce itself from its role
 
-    function renounceMinter() public; //only the address that has Minter roles can renounce itself from its role
-
-    function mint(address account, uint256 amount) public returns (bool); // Mint new tokens. It accepts only an address with Minter Role => Token Validation Contract
-}
     function getTokenCreator() public view returns(address) {
         return tokenCreator;
     }

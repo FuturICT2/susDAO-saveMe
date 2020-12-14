@@ -1,7 +1,7 @@
 pragma solidity ^0.5.16;
 
-import 'contract/TokenValidation.sol';
-import 'contract/SaveMeToken.sol';
+import 'contracts/TokenValidation.sol';
+import 'contracts/SaveMeToken.sol';
 
 
 /*  This contract:
@@ -25,7 +25,7 @@ contract HealthInsurance is TokenValidation {
     );
 
 
-    constructor ( _PatientAddress , _InsuranceCompanyAddress , _insurance_cost) public {
+    constructor ( address _PatientAddress, address _InsuranceCompanyAddress, uint256 _insurance_cost) public {
 
         PatientAddress = _PatientAddress;
         InsuranceCompanyAddress = _InsuranceCompanyAddress;

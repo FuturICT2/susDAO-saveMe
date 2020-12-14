@@ -1,4 +1,4 @@
-pragma solidity ^0.5.17;
+pragma solidity ^0.5.16;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol";
@@ -112,42 +112,5 @@ contract ERC20Plus is ERC20Detailed, ERC20Mintable, ERC20Burnable, ERC20Pausable
         // To indicate construction is over, and block pause() and unpause()
         // from being used
         constructing = false;
-    }
-}
-
-/**
- * @title ERC20PlusCapped
- * @dev ERC20 Token, which acts very similarly to ERC20Plus, but with the
- * exception that it has a cap.
- */
-contract ERC20PlusCapped is ERC20Capped, ERC20Plus {
-
-    constructor(
-        string memory name_,
-        string memory symbol_,
-        uint8 decimals_,
-        address minter,
-        bool isBurnable_,
-        uint cap_,
-        bool isTransferable_,
-        bool isMintable_,
-        uint initialSupply,
-        address initialSupplyOwner
-        )
-            public
-            // ERC20Capped constructor
-            ERC20Capped(cap_)
-            // ERC20Plus constructor
-            ERC20Plus(
-                name_,
-                symbol_,
-                decimals_,
-                minter,
-                isBurnable_,
-                isTransferable_,
-                isMintable_,
-                initialSupply,
-                initialSupplyOwner)
-    {
     }
 }

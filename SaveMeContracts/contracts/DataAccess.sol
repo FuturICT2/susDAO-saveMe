@@ -1,6 +1,6 @@
 pragma solidity ^0.5.16;
 
-import 'contract/SaveMeToken.sol';
+import 'contracts/SaveMeToken.sol';
 
 /*This Contract Gives Access to an Account, to view another accounts IPFS file with data measurements for the past 1 month*/
 
@@ -15,7 +15,7 @@ contract DataAccess is SaveMeToken{
 
     constructor (address _AskingAccess, address _GrantAccess, uint256 _tokens_paid) public{
         AskingAccess = _AskingAccess;
-        GivingAccess = _GivingAccess;
+        GrantAccess = _GrantAccess;
         tokens_paid = _tokens_paid; //this could be set to a ficed amount =>conceptual decision
     }
 
@@ -27,8 +27,8 @@ contract DataAccess is SaveMeToken{
         //Return the hash of this new uploaded IPFS file to the AskingAccess address
 
         //Then transfer all tokens from one account to the other
-        transfer_from(AskingAccess, GrantAccess,tokens_paid); //from the SaveMeToken class
-        returns true;
+        transferFrom(AskingAccess, GrantAccess,tokens_paid); //from the SaveMeToken class
+        return true;
 
     }
 
