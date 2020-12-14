@@ -2,6 +2,7 @@ pragma solidity ^0.5.16;
 
 import 'contracts/tokens/ERC20Plus.sol';
 import '@openzeppelin/contracts/math/SafeMath.sol';
+//import 'DataAccess.sol';
 
 
 
@@ -9,7 +10,7 @@ import '@openzeppelin/contracts/math/SafeMath.sol';
 
 
 
-contract SaveMeToken is ERC20Plus {
+contract SaveMeToken is  ERC20Plus {
 
     using SafeMath for uint256;
     using SafeMath for uint8; //use safemath for all math operations to avoid overflows and hacking of your smart contracts
@@ -132,6 +133,28 @@ contract SaveMeToken is ERC20Plus {
             return token_symbol;
     }
 
+
+    function giveDataAccess( address _from , address _to) public returns (bool success) {
+        //Deploy contract
+        /* require(msg.sender == _to); //we want the one who pays for the contract to be the one asking for access
+        DataAccess instance = DataAccess(_to );
+        bool grantedAccess =  instance.giveAccess(_from , _to);
+        if (grantedAccess =true ){
+           return true;
+        }
+        */
+        return false ;
+
+    }
+
+    function validateTokens( address _from, address _to ) public returns (bool success){
+        require (msg.sender == _from) ; // require the one paying for the contract to be the one paying the tokens
+        /*TokenValidation instance = TokenValidation(_from );
+        instance.deployTokens(_from,_to);
+        */
+        return true;
+    }
+
     // Mint new tokens.
     // It accepts only an address with Minter Role => Token Validation Contract
 
@@ -141,7 +164,4 @@ contract SaveMeToken is ERC20Plus {
 
     //function renounceMinter() public;//only the address that has Minter roles can renounce itself from its role
 
-    function getTokenCreator() public view returns(address) {
-        return tokenCreator;
-    }
 }
