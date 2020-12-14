@@ -76,3 +76,45 @@ For full functionality, make sure you have:
     ```sh
     node app.js
     ```
+
+
+
+## Development Mode & Future Work
+1. Add some minor functions to support IPFS access inside the Smart Contracts
+2. Add request and approve contracts to ensura that a Data Access request is accepted by the corresponding party
+3. For existing contracts and any newly written, in the terminal use
+    ```sh
+    truffle compile
+    ```
+    to compile the contracts and also
+    
+    ```sh
+    truffle migrate
+    ```
+    
+    to migrate them
+
+3. Implement detailed testing 
+
+    *a)* Check if token is succesfully dpeloyed
+    *b)* Run test cases for different token validation from diffent types of users
+    *c)* Run test cases for data access and ensure that no bridge of any patient's privacy occurs
+    *d)* 
+
+4. To check the success of any written tests use the truffle comman in the terminal
+
+    ```sh
+    truffle test
+    ```
+
+5. Write more code on the app.js file to support the Smart Contract interaction with the FrontEnd. Specifically:
+    *a)* IPFS interaction with the Smart Contracts and the Front End
+    *b)* Transfer tokens from one account to the other using the "Send Tokens" button after reading the destination address from the QR code
+    *c)* Implement the relevant menu options with the respective Smart Contracts (Data Access , Token Validation , Health Insurance). This means that the user    should interact with the Smart Contracts to be able to view his/her Health Insurance, Validate Tokens upon request or Download and Access any measurements through the IPFS files.
+
+
+
+
+# Special Thanks
+I would like to thank @benjaminaaron (Benjamin Aaron Degenhart) for his much appreciated help and contribution in the coding part,
+as well as Dr.Markus M. Dapp and  Mark Ballandies for their assistance and guidance in the conceptual development of SaveMe.
