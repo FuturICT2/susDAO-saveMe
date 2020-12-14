@@ -1,11 +1,11 @@
 # "SaveMe", a token for Health
 
-This is a repository dedicated to "SaveMe",a token for health! The aim of this token is to incentivize diabetes patients to take care of their own health and be more engaged with ensuring they mantain stable glucose levels throughout the day. Combining IoT and Tokens deployed on Decentralized Systems, SaveMe will become the #1 solution to diabetes. A CGM(Continuous Glucose Monitor) is attached to each patient's arm and takes blood measurements every 5 minutes. The glucose level measurements are reported every 5 minutes in the DApp and alert the patient for any abnormalities. In the event of not internet connectivity of the device, then the results are saved locally and the user is notified about the glucose levels via Bluetooth connectivity. When CGM internet connectivity is restored then all data is validated in the blockchain and all the tokens are awarded. 
+This is a repository dedicated to "SaveMe",a token for health! The aim of this token is to incentivize diabetes patients to take care of their own health and be more engaged with ensuring they mantain stable glucose levels throughout the day. Combining IoT and Tokens deployed on Decentralized Systems, SaveMe will become the #1 solution to diabetes. A CGM(Continuous Glucose Monitor) is attached to each patient's arm and takes blood measurements every 5 minutes. The glucose level measurements are reported every 5 minutes in the DApp and alert the patient for any abnormalities.
 
 ![SaveMe -  A token for Health](/assets/saveMe.jpg)
 
 ### Token Award conditions
-For a token to be awarded, the average of the 4 quarter measurements (average of 3 5-minute measurements) must be within the normal range of 70mg/dl (3.9mmol/L)  and 180dl/mg(10mmol/L). For these ranges we take into account the 3 levels of hypoglycemia and hypoglycemia mentioned above and the amount of time of each event that needs to be minimized to avoid any after effects. Also a token is not awarded for 1hour averages above the severe limit(70-55mg/dl lower limit and 180mg/dl upper limit) . Furthermore a burning function is implemented and a penalty of -100 tokens and zeroing of weekly bonus multiplier is implemented for emergency/clinical-significant limits (<55mg/dl and >250mg/dl). As for the concept of bonus multiplier, at the end of the week if  more than 157/172 are awarded (172 possible tokens awarded throughout the week and allow for an error of 2 hours per day (for 2 meals) corresponding to 14 tokens maximum lost per week). If more than 157 tokens are awarded per week then the earning are multiplied by each weeks multiplier. The multiplier is incremented by 1 per week. The multiplier is reset to 0 if a clinical significant event occurs. All information for each user will be stored in a large IPFS.
+For a token to be awarded, the average of the 4 quarter measurements (each quarter measurement is the mean of 3 measurements of 5-minute measurement intervals) must be within the normal range of 70mg/dl (3.9mmol/L)  and 180dl/mg(10mmol/L). The ranges are dfined based on the 3 levels of hypoglycemia and hyperglycemia.The sensor sends  data, either as measurements or token calculations.Both sources of data are saved in an IPFS file each encrypted with the public key of the patient & the shaddow account.
 
 ## Required Software
 To run the application, you will need the following software:
@@ -24,7 +24,7 @@ For full functionality, make sure you have:
 ## How to run?
 1. Download directory either manually or using git clone
     ```sh
-    git clone "https:github/saveMe"
+    git clone "https://github.com/FuturICT2/susDAO-saveMe"
     ```
 2. Open project folder with VS
 3. Download all necessary packages with npm
