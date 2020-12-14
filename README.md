@@ -1,11 +1,11 @@
 # "SaveMe", a token for Health
 
-This is a repository dedicated to "SaveMe",a token for health! The aim of this token is to incentivize diabetes patients to take care of their own health and be more engaged with ensuring they mantain stable glucose levels throughout the day. Combining IoT and Tokens deployed on Decentralized Systems, SaveMe will become the #1 solution to diabetes. A CGM(Continuous Glucose Monitor) is attached to each patient's arm and takes blood measurements every 5 minutes. The glucose level measurements are reported every 5 minutes in the DApp and alert the patient for any abnormalities.
+This is a repository dedicated to "SaveMe", a token for health! The aim of this token is to incentivize diabetes patients to take care of their own health and be more engaged with ensuring they mantain stable glucose levels throughout the day. Combining IoT and Tokens deployed on Decentralized Systems, SaveMe will become the #1 solution to diabetes. A CGM (Continuous Glucose Monitor) is attached to each patient's arm and takes blood measurements every 5 minutes. The glucose level measurements are reported every 5 minutes in the DApp and alert the patient for any abnormalities.
 
 ![SaveMe -  A token for Health](/assets/saveMe.jpg)
 
 ### Token Award conditions
-For a token to be awarded, the average of the 4 quarter measurements (each quarter measurement is the mean of 3 measurements of 5-minute measurement intervals) must be within the normal range of 70mg/dl (3.9mmol/L)  and 180dl/mg(10mmol/L). The ranges are dfined based on the 3 levels of hypoglycemia and hyperglycemia.The sensor sends  data, either as measurements or token calculations.Both sources of data are saved in an IPFS file each encrypted with the public key of the patient & the shaddow account.
+For a token to be awarded, the average of the 4 quarter measurements (each quarter measurement is the mean of 3 measurements of 5-minute measurement intervals) must be within the normal range of 70mg/dl (3.9mmol/L)  and 180dl/mg(10mmol/L). The ranges are dfined based on the 3 levels of hypoglycemia and hyperglycemia.The sensor sends  data, either as measurements or token calculations. Both sources of data are saved in an IPFS file each encrypted with the public key of the patient & the shaddow account.
 
 ## Required Software
 To run the application, you will need the following software:
@@ -35,7 +35,7 @@ For full functionality, make sure you have:
     ```
 4. Server website and expose localhost to a public address for sensor to send data
 
-    *a)* Start ngrok in a Terminal, where your - `localhost:8000 ` will be exposed
+    *a)* Start ngrok in a Terminal, where your  `localhost:8000 ` will be exposed
 
     ```sh
     ./ngrok http 8000
@@ -83,6 +83,9 @@ For full functionality, make sure you have:
 ## Sensor & Front End
 The sensor source code is written in *Processing* an dis uploaded to either an *Arduino* or an *ESP32*, using the a compatible IDE. At the same time we run the application in VS using Node. Hence the sensor starts sending *POST* data to the server operating through *Node* and exposed through *ngrok*. An ilustration of both the sensor and the website Front End are shown below.
 
+![Front End and Sensor Device for the SaveMe project](/assets/development.jpg)
+
+To access the website it is a requirement, to have a **Metamask** account and login. The unique sensor id of each CGM is associated with a Metamask account that can access real-time measurements from the sensor.
 
 
 ## Development Mode & Future Work
