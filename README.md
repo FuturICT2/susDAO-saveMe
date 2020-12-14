@@ -1,4 +1,4 @@
-# "SaveMe", a token for Health
+# "SaveMe" - A token for Health
 
 This is a repository dedicated to "SaveMe", a token for health! The aim of this token is to incentivize diabetes patients to take care of their own health and be more engaged with ensuring they mantain stable glucose levels throughout the day. Combining IoT and Tokens deployed on Decentralized Systems, SaveMe will become the #1 solution to diabetes. A CGM (Continuous Glucose Monitor) is attached to each patient's arm and takes blood measurements every 5 minutes. The glucose level measurements are reported every 5 minutes in the DApp and alert the patient for any abnormalities.
 
