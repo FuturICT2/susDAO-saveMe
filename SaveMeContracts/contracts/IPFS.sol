@@ -1,4 +1,5 @@
-pragma solidity ^0.5.17;
+//Licensing
+pragma solidity ^0.5.16;
 
 
 /*This contract aims to get the Hash corresponding to the IPFS files of a particular user.

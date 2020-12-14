@@ -1,7 +1,7 @@
 pragma solidity ^0.5.16;
 
-import 'contract/TokenValidation.sol'
-import 'contract/SaveMeToken.sol'
+import 'contract/TokenValidation.sol';
+import 'contract/SaveMeToken.sol';
 
 
 /*  This contract:
@@ -12,61 +12,59 @@ import 'contract/SaveMeToken.sol'
 
 contract HealthInsurance is TokenValidation {
 
-    public address PatientAddress ;
-    public address InsuranceCompanyAddress ;
-    public uint256 insurance_cost ;
-    public string IPFS_Insurance_hash ;
-    public bool 3monthsPassed ; 
+    address public PatientAddress;
+    address public InsuranceCompanyAddress;
+    uint256 public insurance_cost;
+    string public IPFS_Insurance_hash;
+    bool public three_monthsPassed;
 
 
     //Create Event , when 3 months have passed, in order to call again the Token Validation
-    event ReValidate {
-        tokentoken_validation_instance =  new TokenValidation( InsuranceCompanyAddress , PatientAddress); //this is wrong but conceptually this is what I aim to do
-    }
+    event ReValidate (
+        //TokenValidation tokentoken_validation_instance =  new TokenValidation( InsuranceCompanyAddress , PatientAddress); //this is wrong but conceptually this is what I aim to do
+    );
 
 
     constructor ( _PatientAddress , _InsuranceCompanyAddress , _insurance_cost) public {
 
-        PatientAddress = _PatientAddress ;
-        InsuranceCompanyAddress = _InsuranceCompanyAddress ;
-        insurance_cost =  _insurance_cost; 
-
-
-        init() ;
+        PatientAddress = _PatientAddress;
+        InsuranceCompanyAddress = _InsuranceCompanyAddress;
+        insurance_cost = _insurance_cost;
+        init();
    }
 
 
-   function init(){
+    function init() public returns (bool success) {
        //reset the 3 monthsPassed boolean...as we just validated today
-       3monthsPassed =false ;
+       three_monthsPassed = false;
        //call TokenValidation
-       TokenValidation token_validation_instance =  new TokenValidation( InsuranceCompanyAddress , PatientAddress);
+       TokenValidation token_validation_instance = new TokenValidation( InsuranceCompanyAddress , PatientAddress);
+       token_validation_instance.deploy_tokens(); //call the function from the token validation contract todeploy the tokens
        //Deploy now the health insurance of the user/patient
-       DeployInsuranceCopy(PatientAddress) ; 
+       DeployInsuranceCopy(PatientAddress);
        //Now call the allowance function from SaveMeToken (or maybe need to change, where I've placed the allowance function)
-       allowance(PatientAddress, InsuranceCompanyAddress ,insurance_cost)
+       allowance(PatientAddress, InsuranceCompanyAddress, insurance_cost);
 
        //This is wrong, but what I am trying to do is the emit an Event and redo Token Validation if 3 months since the deployment of this contract have passed
-       if(3monthsPassed){
-       emit ReValidate 
+       if(three_monthsPassed){
+       emit ReValidate();
        }
-       
    }
 
-    function viewInsuranceCopy(address Insured_party){
+    function viewInsuranceCopy(address Insured_party) public returns(bool success){
+        //return the IPFS_Insurance_Hash
 
-        return IPFS_hash_Insurance;
+        return true;
+    }
 
-    } 
-
-    function DeployInsuranceCopy(address Insured_party){
+    function DeployInsuranceCopy(address Insured_party) public returns (bool succcess){
         //Create an IPFS file with the address of the insured party attached
         //This will act as a digital copy of the health insurance
         //Conceptual Decision => deploy actual Health Insurance Digital Copy on ETH blockchain
         //The Created IPFS file is encrypted with the address of Insured_party
         //update hash
         //IPFS_hash_Insurance  = deployed_hash_address // IPFS hash is set as
-        //
+        return true;
     }
 
 
