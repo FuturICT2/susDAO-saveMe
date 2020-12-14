@@ -21,6 +21,7 @@ For full functionality, make sure you have:
 
 
 
+
 ## How to run?
 1. Download directory either manually or using git clone
     ```sh
@@ -79,6 +80,11 @@ For full functionality, make sure you have:
 
 
 
+## Sensor & Front End
+The sensor source code is written in *Processing* an dis uploaded to either an *Arduino* or an *ESP32*, using the a compatible IDE. At the same time we run the application in VS using Node. Hence the sensor starts sending *POST* data to the server operating through *Node* and exposed through *ngrok*. An ilustration of both the sensor and the website Front End are shown below.
+
+
+
 ## Development Mode & Future Work
 1. Add some minor functions to support IPFS access inside the Smart Contracts
 2. Add request and approve contracts to ensura that a Data Access request is accepted by the corresponding party
@@ -96,10 +102,13 @@ For full functionality, make sure you have:
 
 3. Implement detailed testing 
 
-    *a)* Check if token is succesfully dpeloyed
-    *b)* Run test cases for different token validation from diffent types of users
-    *c)* Run test cases for data access and ensure that no bridge of any patient's privacy occurs
-    *d)* 
+    - Check if token is succesfully dpeloyed
+
+    - Run test cases for different token validation from diffent types of users
+    
+    - Run test cases for data access and ensure that no bridge of any patient's privacy occurs
+    
+    - Run test to check the response of the Smart Contracts and transfer of tokens funds
 
 4. To check the success of any written tests use the truffle comman in the terminal
 
@@ -108,13 +117,27 @@ For full functionality, make sure you have:
     ```
 
 5. Write more code on the app.js file to support the Smart Contract interaction with the FrontEnd. Specifically:
-    *a)* IPFS interaction with the Smart Contracts and the Front End
-    *b)* Transfer tokens from one account to the other using the "Send Tokens" button after reading the destination address from the QR code
-    *c)* Implement the relevant menu options with the respective Smart Contracts (Data Access , Token Validation , Health Insurance). This means that the user    should interact with the Smart Contracts to be able to view his/her Health Insurance, Validate Tokens upon request or Download and Access any measurements through the IPFS files.
+
+    - IPFS interaction with the Smart Contracts and the Front End
+    
+    - Transfer tokens from one account to the other using the "Send Tokens" button after reading the destination address from the QR code
+    
+    - Implement the relevant menu options with the respective Smart Contracts (Data Access , Token Validation , Health Insurance). This means that the Front End must interaact with the Smart Contract and allow the user to view his/her Health Insurance, Validate Tokens upon request or Download and Access any measurements through IPFS.
+
+
+## Coding Background
+    
+* Solidity ⮕ Smart Contract Coding
+* Javascript ⮕  Back End & Front End  Web Developement
+*  Processing ⮕  Sensor Coding 
+*  HTML ⮕ Front End Web Development
+* Bootstrap ⮕  Responsive Front End Web Development
+
+## Special Thanks
+I would like to thank [@benjaminaaron](https://github.com/benjaminaaron) (Benjamin Aaron Degenhart) for his much appreciated help and contribution in the coding part,
+as well as [Dr.Markus M. Dapp](https://coss.ethz.ch/people/postdocs/mdapp.html) and  [Mark Ballandies](https://gess.ethz.ch/en/the-department/people/person-detail.MTgyMTMx.TGlzdC81MTIsNjE4MTIwODY=.html) for their assistance and guidance in the conceptual development of SaveMe.
 
 
 
 
-# Special Thanks
-I would like to thank @benjaminaaron (Benjamin Aaron Degenhart) for his much appreciated help and contribution in the coding part,
-as well as Dr.Markus M. Dapp and  Mark Ballandies for their assistance and guidance in the conceptual development of SaveMe.
+
