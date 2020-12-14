@@ -1,16 +1,15 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.7.5;
 
 import 'contracts/SaveMeToken.sol';
 
 /*This contract creates the tokens based on the IPFS token file retrieved & read */
 
 contract TokenValidation is SaveMeToken
-{   private address ValidationCaller;
+{   
+    private address ValidationCaller;
     private address TokenValidationAddress ; 
     private address TokenOwner;
     private uint256 supply;
-
-
 
 
     constructor (address _ValidationCaller, address _TokenOwner) public {
@@ -19,7 +18,7 @@ contract TokenValidation is SaveMeToken
 
     }
 
-    function getTokens(){
+    function deployTokens(){
     TokenValidationAddress == msg.sender; // we want the token creator to be the Token Validation Contract address
     supply = 0 ; //set supply of tokens to 0;
     //Go to the IPFS file of the account specified by tokenOwner
