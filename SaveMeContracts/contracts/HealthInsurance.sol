@@ -25,7 +25,7 @@ contract HealthInsurance is TokenValidation {
     );
 
 
-    constructor ( address _PatientAddress, address _InsuranceCompanyAddress, uint256 _insurance_cost) public {
+    constructor (address _PatientAddress, address _InsuranceCompanyAddress, uint256 _insurance_cost) public {
 
         PatientAddress = _PatientAddress;
         InsuranceCompanyAddress = _InsuranceCompanyAddress;
@@ -38,12 +38,14 @@ contract HealthInsurance is TokenValidation {
        //reset the 3 monthsPassed boolean...as we just validated today
        three_monthsPassed = false;
        //call TokenValidation
-       TokenValidation token_validation_instance = new TokenValidation( InsuranceCompanyAddress , PatientAddress);
-       token_validation_instance.deploy_tokens(); //call the function from the token validation contract todeploy the tokens
+       address token_address = address(0);
+       TokenValidation token_validation_instance = TokenValidation(token_address);
+       token_validation_instance.init(InsuranceCompanyAddress , PatientAddress, insurance_cost) ;
+       //token_validation_instance.deploy_tokens(); //call the function from the token validation contract todeploy the tokens
        //Deploy now the health insurance of the user/patient
        DeployInsuranceCopy(PatientAddress);
        //Now call the allowance function from SaveMeToken (or maybe need to change, where I've placed the allowance function)
-       allowance(PatientAddress, InsuranceCompanyAddress, insurance_cost);
+       //allowance(PatientAddress, InsuranceCompanyAddress, insurance_cost);
 
        //This is wrong, but what I am trying to do is the emit an Event and redo Token Validation if 3 months since the deployment of this contract have passed
        if(three_monthsPassed){
