@@ -33,6 +33,7 @@ For full functionality, make sure you have:
     npm install
     ```
 4. Server website and expose localhost to a public address for sensor to send data
+
     *a)* Start ngrok in a Terminal, where your - `localhost:8000 ` will be exposed
 
     ```sh
@@ -41,6 +42,7 @@ For full functionality, make sure you have:
     *b)* Copy ngrok main public address
 
 5. Change the ngrok public address for all relevant files
+
     *a)* Go to HTML files and change public address
         
     ```sh
